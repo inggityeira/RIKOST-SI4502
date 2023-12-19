@@ -40,3 +40,11 @@ Route::get('/pegawai', function () {
 Route::get('/tamu', function () {
     return view('tamu.listTamu');
 });
+
+Route::get('/inputTamu', function () {
+    return view('tamu.createTamu');
+});
+
+Route::get('/liatTamu', function () {
+    return view('tamu.detailTamu');
+});
