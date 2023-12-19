@@ -5,6 +5,6 @@
 
 @section('content')
 <!-- masukin isi content disini -->
-halaman laundry
+halaman laundry 123
 
 @endsection
