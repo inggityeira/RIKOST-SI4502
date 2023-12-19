@@ -29,6 +29,10 @@ Route::get('/kamar', function () {
     return view('kamar.listKamar');
 });
 
+Route::get('/identitaskamar', function () {
+    return view('kamar.identitaskamar');
+});
+
 Route::get('/pembayaran', function () {
     return view('pembayaran.listPembayaran');
 });
