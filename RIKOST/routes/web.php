@@ -33,7 +33,11 @@ Route::get('/pembayaran', function () {
     return view('pembayaran.listPembayaran');
 });
 
-Route::get('/pegawai', function () {
+Route::get('/Pegawai', function () {
+    return view('pegawai.listPegawai');
+});
+
+Route::get('/listPegawai', function () {
     return view('pegawai.listPegawai');
 });
 
