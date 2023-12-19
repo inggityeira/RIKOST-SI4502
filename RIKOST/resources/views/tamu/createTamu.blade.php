@@ -5,6 +5,6 @@
 
 @section('content')
 <!-- masukin isi content disini -->
-
+SECARA TAMU
 
 @endsection
