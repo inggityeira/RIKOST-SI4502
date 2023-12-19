@@ -17,8 +17,12 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto me-5" style="font-size: 18px;">
                 <a class="nav-link active me-4" aria-current="page" href="/">Home</a>
+                <a class="nav-link active me-4" aria-current="page" href="/penyewa">Penyewa</a>
+                <a class="nav-link active me-4" aria-current="page" href="/pembayaran">Pembayaran</a>
+                <a class="nav-link active me-4" aria-current="page" href="/laundry">Laundry</a>
+                <a class="nav-link active me-4" aria-current="page" href="/kebersihan">Kebersihan</a>
                 <a class="nav-link active me-4" aria-current="page" href="/pegawai">Pegawai</a>
-                <a class="btn btn-outline-dark" style="background-color:#C8A66B;"aria-current="page" href="/cabang">Cabang</a>
+                <a class="btn btn-outline-dark" style="background-color:#C8A66B;"aria-current="page" href="/kamar">Kamar</a>
             </div>
             </div>
         </div>

@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/cabang', function () {
-    return view('cabang.listCabang');
+Route::get('/laundry', function () {
+    return view('laundry.listLaundry');
 });
 
 Route::get('/penyewa', function () {

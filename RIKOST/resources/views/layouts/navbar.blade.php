@@ -8,8 +8,12 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto me-5" style="font-size: 18px;">
             <a class="nav-link active me-4" aria-current="page" href="/">Home</a>
+            <a class="nav-link active me-4" aria-current="page" href="/penyewa">Penyewa</a>
+            <a class="nav-link active me-4" aria-current="page" href="/pembayaran">Pembayaran</a>
+            <a class="nav-link active me-4" aria-current="page" href="/penyewa">Laundry</a>
+            <a class="nav-link active me-4" aria-current="page" href="/kebersihan">Kebersihan</a>
             <a class="nav-link active me-4" aria-current="page" href="/pegawai">Pegawai</a>
-            <a class="nav-link active me-4" aria-current="page" href="/cabang">Cabang</a>
+            <a class="nav-link active me-4" aria-current="page" href="/kamar">kamar</a>
         </div>
         </div>
     </div>
