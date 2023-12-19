@@ -5,5 +5,6 @@
 
 @section('content')
 <!-- masukin isi content disini -->
+ini list tamu
 
 @endsection
