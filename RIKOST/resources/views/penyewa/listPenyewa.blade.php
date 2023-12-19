@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
-@section('title', '..........')
-<!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
+@section('title', 'RIKOST | Cabang')
+<!-- di titik-titik masukin title -->
 
 @section('content')
 <!-- masukin isi content disini -->
