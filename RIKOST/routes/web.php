@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// general
 Route::get('/', function () {
     return view('landing.login');
 });
@@ -25,22 +26,31 @@ Route::get('/home', function () {
     return view('home');
 });
 
+
+// inggit
 Route::get('/laundry', function () {
     return view('laundry.listLaundry');
 });
 
+
+// laura
 Route::get('/penyewa', function () {
     return view('penyewa.listPenyewa');
 });
 
+
+// rico
 Route::get('/kamar', function () {
     return view('kamar.listKamar');
 });
 
+
+// nikita
 Route::get('/pembayaran', function () {
     return view('pembayaran.listPembayaran');
 });
 
+// nadya
 Route::get('/Pegawai', function () {
     return view('pegawai.listPegawai');
 });
@@ -49,6 +59,7 @@ Route::get('/listPegawai', function () {
     return view('pegawai.listPegawai');
 });
 
+// lanang
 Route::get('/tamu', function () {
     return view('tamu.listTamu');
 });
