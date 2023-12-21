@@ -13,38 +13,50 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// general
 Route::get('/', function () {
+    return view('landing.login');
+});
+
+Route::get('/signup', function () {
+    return view('landing.signup');
+});
+
+Route::get('/home', function () {
     return view('home');
 });
 
+
+// inggit
 Route::get('/laundry', function () {
     return view('laundry.listLaundry');
 });
-
-// Firas
-Route::get('/kebersihan', function () {
-    return view('kebersihan.index');
-});
-//firas
-Route::get('/kebersihan-pembayaran', function () {
-    return view('kebersihan.pembayaran');
-});
-
-
-
 
 Route::get('/penyewa', function () {
     return view('penyewa.listPenyewa');
 });
 
+
+// rico
 Route::get('/kamar', function () {
     return view('kamar.listKamar');
 });
 
+// firas
+Route::get('/kebersihan', function () {
+    return view('kebersihan.index');
+});
+Route::get('/kebersihan-pembayaran', function () {
+    return view('kebersihan.pembayaran');
+});
+
+
+// nikita
 Route::get('/pembayaran', function () {
     return view('pembayaran.listPembayaran');
 });
 
+// nadya
 Route::get('/Pegawai', function () {
     return view('pegawai.listPegawai');
 });
@@ -53,6 +65,7 @@ Route::get('/listPegawai', function () {
     return view('pegawai.listPegawai');
 });
 
+// lanang
 Route::get('/tamu', function () {
     return view('tamu.listTamu');
 });

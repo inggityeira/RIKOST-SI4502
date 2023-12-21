@@ -1,0 +1,26 @@
+body {
+    background-color: #F6DFB5;
+}
+
+h2 {
+    color: var(--3rd, #14183E);
+    text-align: center;
+    font-family: Volkhov;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-left: 80px;
+    margin-top:70px;
+}
+
+#formlogin {
+    border-radius: 25px 0px 0px 25px;
+    background: #FCFEFF;
+}
+
+#formsignup {
+    border-radius: 0px 25px 25px 0px;
+    background: #FCFEFF;
+}

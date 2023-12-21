@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIKOST | HOME</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -22,7 +22,7 @@
                 <a class="nav-link active me-4" aria-current="page" href="/laundry">Laundry</a>
                 <a class="nav-link active me-4" aria-current="page" href="/kebersihan">Kebersihan</a>
                 <a class="nav-link active me-4" aria-current="page" href="/pegawai">Pegawai</a>
-                <a class="btn btn-outline-dark" style="background-color:#C8A66B;"aria-current="page" href="/kamar">Kamar</a>
+                <a class="btn btn-outline-dark" style="background-color:#C8A66B;" aria-current="page" href="/kamar">Kamar</a>
             </div>
             </div>
         </div>
