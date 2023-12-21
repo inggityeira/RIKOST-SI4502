@@ -32,8 +32,6 @@ Route::get('/laundry', function () {
     return view('laundry.listLaundry');
 });
 
-
-// laura
 Route::get('/penyewa', function () {
     return view('penyewa.listPenyewa');
 });
@@ -42,6 +40,14 @@ Route::get('/penyewa', function () {
 // rico
 Route::get('/kamar', function () {
     return view('kamar.listKamar');
+});
+
+// firas
+Route::get('/kebersihan', function () {
+    return view('kebersihan.index');
+});
+Route::get('/kebersihan-pembayaran', function () {
+    return view('kebersihan.pembayaran');
 });
 
 
