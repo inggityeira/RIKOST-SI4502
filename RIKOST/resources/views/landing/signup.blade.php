@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="col-12">
-                                <label for="inputEmaik" class="form-label">Email</label>
+                                <label for="inputEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                             </div>
 

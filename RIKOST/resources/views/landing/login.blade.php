@@ -36,13 +36,13 @@
                   
                         <form>
                           <div class="mb-4">
-                            <label for="formGroupExampleInput" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                           </div>
 
                           <div class="mb-4">
-                            <label for="formGroupExampleInput2" class="form-label">Password</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your Password here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Enter your Password here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                           </div>
 
                           <div class="form-check mb-3">
