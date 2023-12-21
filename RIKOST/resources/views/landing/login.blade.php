@@ -15,7 +15,7 @@
             <!-- Left Page -->
             <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
 
-              <h2 class="position-absolute start-0 top-0"><strong>RIKOST</strong></h2>  
+              <h2 class="position-absolute start-0 top-0" style ="margin-left: 80px; margin-top:70px;"><strong>RIKOST</strong></h2>  
               <img src="img/login.png" class="img-fluid" width="450px" style="margin-top: 200px;">
               <p class="text-title fw-semibold text-center fw-bold" style="color: #000; margin-top: 30px; font-size: 18px;">Gateway to Comfort: Step into Your RIKOST!</p>
 
@@ -24,8 +24,7 @@
             <!-- Right Page -->
             <div class="col-md-8 col-lg-6 position-absolute bottom-0 end-0 top-0" id="formlogin">
 
-              <div class="mb-3 text-center" style="margin-top:100px;">
-                <img src="/images/ideaforgeXfps.svg" alt="" width="200" class="ideaforgeXfps">
+              <div class="mb-4 text-center" style="margin-top:140px;">
                 <h5 class="login-heading mb-3 mt-4 fw-bold" style="font-size: 20px; font-weight: 600;">Login your Account</h5>
               </div>
               
