@@ -21,6 +21,18 @@ Route::get('/laundry', function () {
     return view('laundry.listLaundry');
 });
 
+// Firas
+Route::get('/kebersihan', function () {
+    return view('kebersihan.index');
+});
+//firas
+Route::get('/kebersihan-pembayaran', function () {
+    return view('kebersihan.pembayaran');
+});
+
+
+
+
 Route::get('/penyewa', function () {
     return view('penyewa.listPenyewa');
 });
