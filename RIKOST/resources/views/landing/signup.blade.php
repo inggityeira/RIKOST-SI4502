@@ -20,7 +20,7 @@
             <!-- Right Page -->
             <div class="col-md-6 position-absolute bottom-0 end-0 top-0">
                 
-                <h2 class="position-absolute start-0 top-0"><strong>RIKOST</strong></h2>  
+                <h2 class="position-absolute end-0 top-0"><strong>RIKOST</strong></h2>  
                 <img src="img/signup.png" class="img-fluid" width="450px" style="margin-top: 200px;">
                 <p class="text-title fw-semibold text-center fw-bold" style="color: #000; margin-top: 30px; font-size: 18px;">Gateway to Comfort: Step into Your RIKOST!</p>
 
