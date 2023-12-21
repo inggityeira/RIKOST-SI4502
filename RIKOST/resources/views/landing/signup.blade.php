@@ -28,22 +28,22 @@
                         <form class="row g-3">
                             <div class="col-12">
                                 <label for="inputName" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Enter your Name here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="text" class="form-control" name="name" placeholder="Enter your Name here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                             </div>
 
                             <div class="col-12">
                                 <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="email" class="form-control" name="email" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                             </div>
 
                             <div class="col-12">
                                 <label for="inputPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Enter your Passowrd here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="password" class="form-control" name="password" placeholder="Enter your Passowrd here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                             </div>
 
                             <div class="col-md-2" style="margin-right: 50px;">
                                 <label for="inputAge" class="form-label">Age</label>
-                                <input type="number" class="form-control" id="inputAge" placeholder="20" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="number" class="form-control" name="age" placeholder="20" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                             </div>
 
                             <div class="col-md-6" style="margin-left: 100px;">
@@ -55,11 +55,11 @@
 
                                     <div class="row">
                                         <div class="col form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender" id="gender1" value="male">
+                                            <input class="form-check-input" type="radio" name="gender" value="male">
                                             <label class="form-check-label" for="gender1">Male</label>
                                         </div>
                                         <div class="col form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
+                                            <input class="form-check-input" type="radio" name="gender" value="female">
                                             <label class="form-check-label" for="gender2">Female</label>
                                         </div>
                                     </div>
