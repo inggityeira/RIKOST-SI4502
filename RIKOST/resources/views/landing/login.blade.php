@@ -34,19 +34,20 @@
                     <div class="row">
                       <div class="left-page col-ms-9 col-lg-8 mx-auto">
                   
-                        <form>
+                        <form method="POST" action="/login">
+                          @csrf
                           <div class="mb-4">
                             <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                            <input type="email" class="form-control" name="email" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                           </div>
 
                           <div class="mb-4">
                             <label for="inputPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Enter your Password here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                            <input type="password" class="form-control" name="password" placeholder="Enter your Password here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
                           </div>
 
                           <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                            <input class="form-check-input" type="checkbox" name="remember" id="rememberPasswordCheck">
                             <label class="remember-me form-check-label second-text" for="rememberPasswordCheck">Remember me</label>
                           </div>
 

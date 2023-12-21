@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 // general
 Route::get('/', function () {
     return view('landing.login');
+});
+
+// Route::post('/login', [SessionController::class, 'login']);
+
+Route::get('/login', function () {
+    return 'bener';
 });
 
 Route::get('/signup', function () {
