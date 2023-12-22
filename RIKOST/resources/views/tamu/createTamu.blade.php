@@ -8,13 +8,6 @@
 
 @section('content')
 <!-- masukin isi content disini -->
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buku Tamu Kostan</title>
-    <!-- Tambahkan CSS Bootstrap di sini jika tidak menggunakan CDN -->
-</head>
 <div class="card">
     <div class="card-header">
         <h2 class="mb-0">Buku Tamu Kostan</h2>
