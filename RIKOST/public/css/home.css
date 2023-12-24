@@ -1,0 +1,44 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+#home h1 {
+    color: var(--1st, #181E4B);
+    font-family: Volkhov;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 89px; /* 139.063% */
+    letter-spacing: -2.56px;
+    margin-left: 90px;
+    margin-top: 50px;
+}
+
+#home p{
+    color: #DF6951;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-left: 190px;
+    margin-top: 120px;
+}
+h2 {
+    color: var(--3rd, #14183E);
+    text-align: center;
+    font-family: Volkhov;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-left: 40px;
+}
+
+#icon {
+    margin-top: 40px;
+    margin-left: 0px;
+}
+
+
