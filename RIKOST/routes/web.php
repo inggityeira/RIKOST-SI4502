@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\SessionController;
+use App\Http\Controllers\AuthManager;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,23 +15,23 @@ use App\http\Controllers\SessionController;
 */
 
 // general
-Route::get('/', function () {
-    return view('landing.login');
-});
+// Route::get('/', function () {
+//     return view('landing.login');
+// });
 
-// Route::post('/login', [SessionController::class, 'login']);
+Route::get('/', [AuthManager::class, 'login']);
+Route::get('/signup', [AuthManager::class, 'signup']);
+Route::post('/signup-user', [AuthManager::class, 'signupUser'])->name('signup-user');
+Route::post('/login-user', [AuthManager::class, 'loginUser'])->name('login-user');
+Route::get('/home', [AuthManager::class, 'home']);
 
-Route::get('/login', function () {
-    return 'bener';
-});
+// Route::get('/signup', function () {
+//     return view('landing.signup');
+// });
 
-Route::get('/signup', function () {
-    return view('landing.signup');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 
 // inggit
