@@ -24,6 +24,9 @@ Route::get('/signup', [AuthManager::class, 'signup']);
 Route::post('/signup-user', [AuthManager::class, 'signupUser'])->name('signup-user');
 Route::post('/login-user', [AuthManager::class, 'loginUser'])->name('login-user');
 Route::get('/home', [AuthManager::class, 'home']);
+Route::get('/landing', function () {
+    return view('landing.landing');
+});
 
 // Route::get('/signup', function () {
 //     return view('landing.signup');
@@ -39,6 +42,7 @@ Route::get('/laundry', function () {
     return view('laundry.listLaundry');
 });
 
+// laura
 Route::get('/penyewa', function () {
     return view('penyewa.listPenyewa');
 });
