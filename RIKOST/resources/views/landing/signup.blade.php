@@ -25,25 +25,38 @@
                     <div class="row">
                       <div class="left-page col-ms-9 col-lg-8 mx-auto">
 
-                        <form class="row g-3">
+                        <form action="{{route('signup-user')}}" method="POST" class="row g-3">
+                            @if(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
+                            @endif
+
+                            @if(Session::has('fail'))
+                            <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                            @endif
+
+                            @csrf
                             <div class="col-12">
                                 <label for="inputName" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter your Name here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="text" class="form-control" name="name" placeholder="Enter your Name here" value="{{old('name')}}" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <span class="text-danger">@error('name') {{$message}} @enderror</span>
                             </div>
 
                             <div class="col-12">
                                 <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="Enter your Email here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="email" class="form-control" name="email" placeholder="Enter your Email here" value="{{old('email')}}" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <span class="text-danger">@error('email') {{$message}} @enderror</span>
                             </div>
 
                             <div class="col-12">
                                 <label for="inputPassword" class="form-label">Password</label>
                                 <input type="password" class="form-control" name="password" placeholder="Enter your Passowrd here" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <span class="text-danger">@error('password') {{$message}} @enderror</span>
                             </div>
 
                             <div class="col-md-2" style="margin-right: 50px;">
                                 <label for="inputAge" class="form-label">Age</label>
-                                <input type="number" class="form-control" name="age" placeholder="20" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <input type="number" class="form-control" name="Age" placeholder="20" value="{{old('Age')}}" style="border-radius: 8px; background: rgba(176, 186, 195, 0.40);">
+                                <span class="text-danger">@error('Age') {{$message}} @enderror</span>
                             </div>
 
                             <div class="col-md-6" style="margin-left: 100px;">
@@ -55,14 +68,15 @@
 
                                     <div class="row">
                                         <div class="col form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender" value="male">
+                                            <input class="form-check-input" type="radio" name="Gender" value="male">
                                             <label class="form-check-label" for="gender1">Male</label>
                                         </div>
                                         <div class="col form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender" value="female">
+                                            <input class="form-check-input" type="radio" name="Gender" value="female">
                                             <label class="form-check-label" for="gender2">Female</label>
                                         </div>
                                     </div>
+                                    <span class="text-danger">@error('Gender') {{$message}} @enderror</span>
 
                                 </div>
                             </div>
@@ -77,7 +91,7 @@
                         </div>
 
                         <div>
-                          <p style="color: #7C838A; font-size: 15px; font-weight: 400; text-align: center;">Already have an account? <a href="" class="primary-text fw-medium">Login</a></p>
+                          <p style="color: #7C838A; font-size: 15px; font-weight: 400; text-align: center;">Already have an account? <a href="/" class="primary-text fw-medium">Login</a></p>
                         </div>
 
                         </div>
