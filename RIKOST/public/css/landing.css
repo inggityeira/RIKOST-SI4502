@@ -1,0 +1,56 @@
+body {
+    background-color: #F6DFB5;
+}
+
+h2 {
+    color: var(--3rd, #14183E);
+    text-align: center;
+    font-family: Volkhov;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+#formlogin {
+    border-radius: 25px 0px 0px 25px;
+    background: #FCFEFF;
+}
+
+#formsignup {
+    border-radius: 0px 25px 25px 0px;
+    background: #FCFEFF;
+}
+
+#landpage p {
+    color: var(--1st, #181E4B);
+    font-family: Volkhov;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 89px; /* 80.18% */
+    letter-spacing: -4.44px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 10px;
+}
+
+#landpage h1{
+    color: var(--Gray, #66645E);
+    text-align: center;
+    font-family: Volkhov;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 110.345% */
+    letter-spacing: -0.58px;
+   margin-left: 10px;
+}
+
+#foto {
+    width: 700px;
+    flex-shrink: 0;
+    margin-top: 80px;
+}
