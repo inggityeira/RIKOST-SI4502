@@ -68,11 +68,7 @@ Route::get('/pembayaran', function () {
 });
 
 // nadya
-Route::get('/Pegawai', function () {
-    return view('pegawai.listPegawai');
-});
-
-Route::get('/listPegawai', function () {
+Route::get('/pegawai', function () {
     return view('pegawai.listPegawai');
 });
 
