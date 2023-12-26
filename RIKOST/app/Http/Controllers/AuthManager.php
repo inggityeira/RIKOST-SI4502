@@ -72,9 +72,8 @@ class AuthManager extends Controller
     public function home()
     {
         
-        if (Session::has('loginId')){
-            return view('home');
-        }
+        return view('home');
+        
     }
 
     public function logout()
