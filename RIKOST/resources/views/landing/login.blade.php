@@ -22,7 +22,7 @@
             </div> 
 
             <!-- Right Page -->
-            <div class="col-md-8 col-lg-6 position-absolute bottom-0 end-0 top-0" id="formlogin">
+            <div class="col-md-8 col-lg-6 position-absolute end-0 top-0" id="formlogin">
 
               <div class="mb-4 text-center" style="margin-top:140px;">
                 <h5 class="login-heading mb-3 mt-4 fw-bold" style="font-size: 20px; font-weight: 600;">Login your Account</h5>

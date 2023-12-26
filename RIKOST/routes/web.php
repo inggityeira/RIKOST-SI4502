@@ -19,11 +19,13 @@ use App\Http\Controllers\AuthManager;
 //     return view('landing.login');
 // });
 
-Route::get('/', [AuthManager::class, 'login']);
-Route::get('/signup', [AuthManager::class, 'signup']);
+Route::get('/', [AuthManager::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('/signup', [AuthManager::class, 'signup'])->middleware('alreadyLoggedIn');
 Route::post('/signup-user', [AuthManager::class, 'signupUser'])->name('signup-user');
 Route::post('/login-user', [AuthManager::class, 'loginUser'])->name('login-user');
-Route::get('/home', [AuthManager::class, 'home']);
+Route::get('/home', [AuthManager::class, 'home'])->middleware('isLoggedIn');
+Route::get('/logout', [AuthManager::class, 'logout']);
+
 Route::get('/landing', function () {
     return view('landing.landing');
 });
