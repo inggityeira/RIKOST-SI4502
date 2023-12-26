@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\halamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,6 @@ use App\Http\Controllers\AuthManager;
 */
 
 // general
-// Route::get('/', function () {
-//     return view('landing.login');
-// });
 
 Route::get('/', [AuthManager::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('/signup', [AuthManager::class, 'signup'])->middleware('alreadyLoggedIn');
@@ -30,59 +28,26 @@ Route::get('/landing', function () {
     return view('landing.landing');
 });
 
-// Route::get('/signup', function () {
-//     return view('landing.signup');
-// });
-
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
-
 // inggit
-Route::get('/laundry', function () {
-    return view('laundry.listLaundry');
-});
+Route::get('/laundry', [halamanController::class, 'laundry'])->middleware('isLoggedIn');
 
 // laura
-Route::get('/penyewa', function () {
-    return view('penyewa.listPenyewa');
-});
-
+Route::get('/penyewa', [halamanController::class, 'penyewa'])->middleware('isLoggedIn');
 
 // rico
-Route::get('/kamar', function () {
-    return view('kamar.listKamar');
-});
+Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');
 
 // firas
-Route::get('/kebersihan', function () {
-    return view('kebersihan.index');
-});
-Route::get('/kebersihan-pembayaran', function () {
-    return view('kebersihan.pembayaran');
-});
-
+Route::get('/kebersihan', [halamanController::class, 'kebersihan'])->middleware('isLoggedIn');
+Route::get('/kebersihan-pembayaran', [halamanController::class, 'kebersihanpembayaran'])->middleware('isLoggedIn');
 
 // nikita
-Route::get('/pembayaran', function () {
-    return view('pembayaran.listPembayaran');
-});
+Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');
 
 // nadya
-Route::get('/pegawai', function () {
-    return view('pegawai.listPegawai');
-});
+Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');
 
 // lanang
-Route::get('/tamu', function () {
-    return view('tamu.listTamu');
-});
-
-Route::get('/inputTamu', function () {
-    return view('tamu.createTamu');
-});
-
-Route::get('/liatTamu', function () {
-    return view('tamu.detailTamu');
-});
+Route::get('/tamu', [halamanController::class, 'tamu'])->middleware('isLoggedIn');
+Route::get('/inputTamu', [halamanController::class, 'inputTamu'])->middleware('isLoggedIn');
+Route::get('/liatTamu', [halamanController::class, 'liatTamu'])->middleware('isLoggedIn');
