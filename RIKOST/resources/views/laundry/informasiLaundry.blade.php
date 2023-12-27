@@ -10,7 +10,7 @@
 @section('content')
 <div id="laundry">
 
-    <div class="row">
+    <div class="row mb-3">
 
         <div class="col-md-8">
             <div class="div ps-md-5">
@@ -82,6 +82,16 @@
 
         </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col-md-8" style="background: red;">
+            <p>COLOM 1</p>
+        </div>
+
+        <div class="col-md-4" style="background: Blue;">
+            <p>COLOM 2</p>
+        </div>
     </div>
 
 </div>
