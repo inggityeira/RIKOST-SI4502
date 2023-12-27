@@ -3,8 +3,9 @@
 @section('title', '..........')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
-@section('css')
-<!-- masukin link file css disini contoh: <link rel="stylesheet" href="css/home.css"> -->
+@push('css')
+    <!-- masukin <link> yang nyambungin ke file css -->
+@endpush
 
 @section('content')
 
