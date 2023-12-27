@@ -10,7 +10,27 @@ class halamanController extends Controller
 {
     public function laundry()
     {
+        return view('laundry.informasiLaundry');
+    }
+
+    public function detaillaundry()
+    {
+        return view('laundry.detailLaundry');
+    }
+
+    public function listlaundry()
+    {
         return view('laundry.listLaundry');
+    }
+
+    public function newlaundry()
+    {
+        return view('laundry.newLaundry');
+    }
+    
+    public function servicelaundry()
+    {
+        return view('laundry.serviceLaundry');
     }
 
     public function penyewa()

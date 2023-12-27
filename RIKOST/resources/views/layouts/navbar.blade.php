@@ -1,5 +1,5 @@
 <!-- Nav -->
-<nav class="navbar navbar-expand-lg" style="background-color: #CBA96D;">
+<nav class="navbar navbar-expand-lg" style="background-color: #F6DFB5;">
     <div class="container-fluid">
         <a class="navbar-brand" href="/home"><h2><strong>RIKOST</strong></h2></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
