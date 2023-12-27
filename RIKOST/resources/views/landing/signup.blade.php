@@ -13,7 +13,7 @@
     <div class="container-fluid ps-md-0">
         <div class="row">
             <!-- Left Page -->
-            <div class="col-md-8 col-lg-6 position-absolute bottom-0 start-0 top-0"  id="formsignup">
+            <div class="col-md-8 col-lg-6 position-absolute start-0 top-0"  id="formsignup">
                 
                 <div class="mb-4 text-center" style="margin-top:70px;">
                     <h5 class="login-heading mb-3 mt-4 fw-bold" style="font-size: 20px; font-weight: 600;">Create your Account</h5>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\User;
 use Hash;
 use Session;
@@ -54,6 +55,11 @@ class AuthManager extends Controller
         if($user){
             if(Hash::check($request->password, $user->password)){
                 $request->session()->put('loginId', $user->id);
+                if ($request->has('remember')){
+                    $minutes=1440;
+                    $response = new Response('Set Cookie');
+                    $response->withCookie(cookie('remember_token', $user->getRememberToken(), $minutes));
+                }
                 return redirect('home');
             } else {
                 return back()->with('fail', 'Password not matches.');
@@ -65,6 +71,16 @@ class AuthManager extends Controller
 
     public function home()
     {
+        
         return view('home');
+        
+    }
+
+    public function logout()
+    {
+        if (Session::has('loginId')){
+            Session::pull('loginId');
+            return redirect('/');
+        }
     }
 }
