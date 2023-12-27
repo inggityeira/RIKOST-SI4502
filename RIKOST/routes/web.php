@@ -32,6 +32,11 @@ Route::get('/landing', function () {
 // inggit
 Route::get('/laundry', [halamanController::class, 'laundry'])->middleware('isLoggedIn');
 
+// laura
+Route::get('/penyewa', [halamanController::class, 'penyewa'])->middleware('isLoggedIn');
+Route::get('/createpenyewa', [halamanController::class, 'createpenyewa'])->middleware('isLoggedIn');
+Route::get('/updatepenyewa', [halamanController::class, 'updatepenyewa'])->middleware('isLoggedIn');
+
 // rico
 Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');
 
