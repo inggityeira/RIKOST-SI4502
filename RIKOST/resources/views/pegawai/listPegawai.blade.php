@@ -2,26 +2,21 @@
 
 @section('title', 'DATA STAFF')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
-RIKOST | Pegawai
 @section('css')
 <!-- masukin link file css disini contoh: <link rel="stylesheet" href="css/home.css"> -->
 <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
 @section('content')
 <!-- masukin isi content disini -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tabel Pegawai</title>
-</head>
-<body>
+
 
 <div class="container mt-5">
   <h2>Tabel Pegawai</h2>
-  <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambahModal">Tambah</button>
-  <table class="table">
+  <div class="d-flex justify-content-end">
+    <a class="btn btn-primary"href="inputPegawai">Tambah</a>
+  </div>
+  <br>
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>ID Pegawai</th>
@@ -32,6 +27,18 @@ RIKOST | Pegawai
         <th>Norek Pegawai</th>
         <th>Status Pegawai</th>
         <th>Aksi</th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <td>001</td>
+        <td>Udin</td>
+        <th>Jabatan Pegawai</th>
+        <th>Kontak Pegawai</th>
+        <th>Alamat Pegawai</th>
+        <th>Norek Pegawai</th>
+        <th>Status Pegawai</th>
+        <td><a class="btn btn-warning" href="">Edit</a><a class="btn btn-danger" href="">Hapus</a></td>
       </tr>
     </thead>
     <tbody>
@@ -61,6 +68,4 @@ RIKOST | Pegawai
   </div>
 </div>
 
-</body>
-</html>
 @endsection

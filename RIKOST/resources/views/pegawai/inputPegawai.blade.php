@@ -7,6 +7,41 @@
 <!-- masukin link file css disini contoh: <link rel="stylesheet" href="css/home.css"> -->
 
 @section('content')
-<!-- masukin isi content disini -->
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-body">            
+            <h1 class="d-flex justify-content-center">Input Pegawai</h1>
+            <form>
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama Pegawai</label>
+                <input type="text" class="form-control" id="nama" aria-describedby="nama">
+              </div>
+              <div class="mb-3">
+                <label for="jabatan" class="form-label">Jabatan Pegawai</label>
+                <input type="text" class="form-control" id="jabatan" aria-describedby="jabatan">
+              </div>
+              <div class="mb-3">
+                <label for="kontak" class="form-label">Kontak Pegawai</label>
+                <input type="text" class="form-control" id="kontak" aria-describedby="kontak">
+              </div>
+              <div class="mb-3">
+                <label for="alamat" class="form-label">Alamat Pegawai</label>
+                <input type="text" class="form-control" id="alamat" aria-describedby="alamat">
+              </div>
+              <div class="mb-3">
+                <label for="noRek" class="form-label">Nomor Rekening Pegawai</label>
+                <input type="text" class="form-control" id="noRek" aria-describedby="noRek">
+              </div>
+              <div class="mb-3">
+                <label for="status" class="form-label">Status Pegawai</label>
+                <input type="text" class="form-control" id="status" aria-describedby="status">
+              </div>
+             
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 @endsection
