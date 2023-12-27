@@ -18,6 +18,16 @@ class halamanController extends Controller
         return view('penyewa.listPenyewa');
     }
 
+    public function createpenyewa()
+    {
+        return view('penyewa.create');
+    }
+
+    public function updatepenyewa()
+    {
+        return view('penyewa.update');
+    }
+
     public function kamar()
     {
         return view('kamar.listKamar');
