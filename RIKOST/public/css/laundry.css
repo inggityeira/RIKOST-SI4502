@@ -1,0 +1,35 @@
+h2 {
+    color: #000;
+    font-family: Poppins;
+}
+
+#laundry h2 {
+    color: #000;
+    font-size: 35px;
+    margin-top:15px;
+    font-family: Poppins;
+}
+
+#laundry h3 {
+    color: #A38859;
+    font-size: 15px;
+    font-family: Poppins;
+}
+
+#laundry h5 {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    font-family: Poppins;
+}
+
+#laundry p {
+    color: #000;
+    font-size: 22px;
+    font-family: Poppins;
+}
+
+
+#laundry a {
+    text-decoration: none;
+}

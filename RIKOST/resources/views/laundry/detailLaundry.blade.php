@@ -9,6 +9,6 @@
 
 @section('content')
 <!-- masukin isi content disini -->
-List Laundry
+Detail Laundry
 
 @endsection
