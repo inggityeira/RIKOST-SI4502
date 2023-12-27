@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\halamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,34 +15,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+// general
+
+Route::get('/', [AuthManager::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('/signup', [AuthManager::class, 'signup'])->middleware('alreadyLoggedIn');
+Route::post('/signup-user', [AuthManager::class, 'signupUser'])->name('signup-user');
+Route::post('/login-user', [AuthManager::class, 'loginUser'])->name('login-user');
+Route::get('/home', [AuthManager::class, 'home'])->middleware('isLoggedIn');
+Route::get('/logout', [AuthManager::class, 'logout']);
+
+Route::get('/landing', function () {
+    return view('landing.landing');
 });
 
-Route::get('/laundry', function () {
-    return view('laundry.listLaundry');
-});
+// inggit
+Route::get('/laundry', [halamanController::class, 'laundry'])->middleware('isLoggedIn');
 
-Route::get('/penyewa', function () {
-    return view('penyewa.listPenyewa');
-});
+// rico
+Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');
 
-Route::get('/kamar', function () {
-    return view('kamar.listKamar');
-});
+// firas
+Route::get('/kebersihan', [halamanController::class, 'kebersihan'])->middleware('isLoggedIn');
+Route::get('/kebersihan-pembayaran', [halamanController::class, 'kebersihanpembayaran'])->middleware('isLoggedIn');
 
-Route::get('/identitaskamar', function () {
-    return view('kamar.identitaskamar');
-});
+// nikita
+Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');
 
-Route::get('/pembayaran', function () {
-    return view('pembayaran.listPembayaran');
-});
+// nadya
+Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');
 
-Route::get('/pegawai', function () {
-    return view('pegawai.listPegawai');
-});
-
-Route::get('/tamu', function () {
-    return view('tamu.listTamu');
-});
+// lanang
+Route::get('/tamu', [halamanController::class, 'tamu'])->middleware('isLoggedIn');
+Route::get('/inputTamu', [halamanController::class, 'inputTamu'])->middleware('isLoggedIn');
+Route::get('/liatTamu', [halamanController::class, 'liatTamu'])->middleware('isLoggedIn');

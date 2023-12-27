@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Laundry')
+@section('title', '..........')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @section('css')
@@ -8,6 +8,6 @@
 
 @section('content')
 <!-- masukin isi content disini -->
-halaman laundry 123
+
 
 @endsection
