@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
+use App\Http\Controllers\kebersihanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,12 @@ Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedI
 // firas
 Route::get('/kebersihan', [halamanController::class, 'kebersihan'])->middleware('isLoggedIn');
 Route::get('/kebersihan-pembayaran', [halamanController::class, 'kebersihanpembayaran'])->middleware('isLoggedIn');
+Route::get('/kebersihan-admin', [kebersihanController::class, 'index'])->middleware('isLoggedIn');
+Route::get('/kebersihan-admin-create', [kebersihanController::class, 'create'])->middleware('isLoggedIn');
+Route::post('/kebersihan-admin-store', [kebersihanController::class, 'store'])->middleware('isLoggedIn');
+Route::delete('/kebersihan-admin/{id}', [kebersihanController::class, 'destroy'])->middleware('isLoggedIn');
+Route::get('/kebersihan-admin-edit/{id}', [kebersihanController::class, 'edit'])->middleware('isLoggedIn')->name('kebersihan-admin.edit');
+Route::put('/kebersihan-admin-update/{id}', [kebersihanController::class, 'update'])->middleware('isLoggedIn')->name('kebersihan-admin.update');
 
 // nikita
 Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');

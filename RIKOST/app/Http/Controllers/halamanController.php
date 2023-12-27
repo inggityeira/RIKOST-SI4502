@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\layoutkebersihan;
+
 use Illuminate\Http\Request;
 
 class halamanController extends Controller
@@ -23,7 +25,8 @@ class halamanController extends Controller
 
     public function kebersihan()
     {
-        return view('kebersihan.index');
+        $datas = layoutkebersihan::all();
+        return view('kebersihan.index', compact('datas'));
     }
 
     public function kebersihanpembayaran()
