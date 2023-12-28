@@ -37,18 +37,13 @@ Route::get('/landing', function () {
 
 // inggit
 Route::get('/laundry', [halamanController::class, 'laundry'])->middleware('isLoggedIn');
-Route::get('/detaillaundry', [halamanController::class, 'detaillaundry'])->middleware('isLoggedIn');
+// Route::get('/detaillaundry', [halamanController::class, 'detaillaundry'])->middleware('isLoggedIn');
 Route::get('/servicelaundry', [halamanController::class, 'servicelaundry'])->middleware('isLoggedIn');
-
-// Route::get('/listlaundry', [halamanController::class, 'listlaundry'])->middleware('isLoggedIn')->name('laundry.list');
 Route::get('/listlaundry', [LaundryController::class, 'index'])->middleware('isLoggedIn')->name('laundry.list');
-// Route::get('/newlaundry', [halamanController::class, 'newlaundry'])->middleware('isLoggedIn');
+// Route::get('/detaillaundry', [LaundryController::class, 'detail'])->middleware('isLoggedIn')->name('laundry.detail');
+// Route::get('/detaillaundry/{id_laundry}', [LaundryController::class, 'detail'])->name('laundry.detail');
 Route::get('/newlaundry', [LaundryController::class, 'newlaundry'])->middleware('isLoggedIn');
 Route::post('/laundry-store', [LaundryController::class, 'store'])->name('laundry.store');
-
-
-// Route::get('/laundry-new', [LaundryController::class, 'create'])->name('laundry.create');
-// Route::post('/laundry-store', [LaundryController::class, 'store'])->name('laundry.store');
 
 
 // laura

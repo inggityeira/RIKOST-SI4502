@@ -30,12 +30,22 @@
 
                 <p style="color: #A38859;"><strong>Create Order</strong></p>
 
-                <form>
+                <form action="{{route('laundry.store')}}" method="POST">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
+                @if(Session::has('fail'))
+                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                @endif
+
+                @csrf
                     <div class="mb-3">
                         <label for="inputName" class="form-label"><h3 style="color:black; font-size:18px;">Customer Name</h3></label>
                         @if (count($penyewa) > 0)
-                            <select class="form-select" aria-label="Default select example" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
+                            <select class="form-select" aria-label="Default select example" name="nameLaundry" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
                                 <option selected>Select the customer</option>
                                 
                                 @foreach ($penyewa as $customer)
@@ -43,13 +53,13 @@
                                 @endforeach
                             </select>
                         @else
-                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input customer" disabled>
+                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Customer data in the database is empty" disabled>
                         @endif
                     </div>
 
                     <div class="mb-3">
                         <label for="inputService" class="form-label"><h3 style="color:black; font-size:18px; ">Service</h3></label>
-                        <select class="form-select" aria-label="Default select example" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
+                        <select class="form-select" aria-label="Default select example" name="serviceLaundry" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
                             <option selected>Select the service</option>
                             <option value="L1 Pakaian Satuan">L1 Pakaian Satuan</option>
                             <option value="L2 Pakaian Kiloan">L2 Pakaian Kiloan</option>
@@ -61,7 +71,7 @@
 
                     <div class="mb-3">
                         <label for="inputWeight" class="form-label"><h3 style="color:black; font-size:18px;">Laundry Weight</h3></label>
-                        <input type="text" class="form-control"  name="weightLaundry" style="border-radius: 7px; background: #E4E4E4;">
+                        <input type="number" class="form-control"  name="weightLaundry" style="border-radius: 7px; background: #E4E4E4;">
                     </div>
 
                     <div class="mb-3">
@@ -82,22 +92,22 @@
                     <div class="mb-3">
                         <label for="inputStaff" class="form-label"><h3 style="color:black; font-size:18px;">Staff</h3></label>
                         @if (count($pegawai) > 0)
-                            <select class="form-select" aria-label="Default select example" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
+                            <select class="form-select" aria-label="Default select example" name="staffLaundry" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
                                 <option selected>Select the staff</option>
                                 
-                                @foreach ($pegawai as $staff)
+                                @foreach ($pegawai->where('jabatan_pegawai', 'Laundry')->where('status_pegawai', 'Bekerja') as $staff)
                                     <option value="{{ $staff->id_pegawai }}">{{ $staff->nama_pegawai }}</option>
                                 @endforeach
                             </select>
                         @else
-                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input Staff" disabled>
+                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Staff data in the database is empty" disabled>
 
                         @endif
                     </div>
 
                     <div class="mb-3">
                         <label for="inputPickup" class="form-label"><h3 style="color:black; font-size:18px;">Status</h3></label>
-                        <select class="form-select" aria-label="Default select example" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
+                        <select class="form-select" aria-label="Default select example" name="statusLaundry" style="background-color: #E4E4E4; font-size:18px; font-family: Poppins;">
                             <option selected>Select the status</option>
                             <option value="Received">Received</option>
                             <option value="On-going">On-going</option>
