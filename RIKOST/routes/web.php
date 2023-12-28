@@ -80,10 +80,10 @@ Route::get('/pembayaran/destroy/{id_pembayaran}', [PembayaranController::class, 
 
 // nadya
 Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');
-Route::get('/input_pegawai', [halamanController::class,'input_Pegawai']);
-Route::post('/input-data-pegawai' ,[pegawaiController::class,'store'])->name('input-data-pegawai');
+Route::get('/input_pegawai', [halamanController::class, 'input_Pegawai']);
+Route::post('/input-data-pegawai', [pegawaiController::class, 'store'])->name('input-data-pegawai');
 
 // lanang
 Route::get('/tamu', [halamanController::class, 'tamu'])->middleware('isLoggedIn');
-Route::get('/inputTamu', [halamanController::class, 'inputTamu'])->middleware('isLoggedIn');
+Route::get('/inputTamu', [halamanController::class, 'inputTamu'])->middleware('isLoggedIn')->name('inputTamu');
 Route::get('/liatTamu', [halamanController::class, 'liatTamu'])->middleware('isLoggedIn');
