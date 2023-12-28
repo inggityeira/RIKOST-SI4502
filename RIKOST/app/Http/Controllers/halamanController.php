@@ -24,11 +24,6 @@ class halamanController extends Controller
         return view('laundry.listLaundry');
     }
 
-    public function newlaundry()
-    {
-        return view('laundry.newLaundry');
-    }
-
     public function servicelaundry()
     {
         return view('laundry.serviceLaundry');
