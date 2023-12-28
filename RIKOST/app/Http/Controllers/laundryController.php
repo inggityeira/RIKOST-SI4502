@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\laundry;
 use App\Models\pegawai;
+use App\Models\penyewa;
 
 class laundryController extends Controller
 {
     public function newlaundry(){
         $pegawai = pegawai::all();
-        return view('laundry.newlaundry', compact('pegawai'));
+        $penyewa = penyewa::all();
+        return view('laundry.newlaundry', compact('pegawai', 'penyewa'));
     }
 
     public function store(Request $request){
