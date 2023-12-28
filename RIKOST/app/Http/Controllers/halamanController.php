@@ -75,6 +75,10 @@ class halamanController extends Controller
         return view('pegawai.listPegawai');
     }
 
+    public function input_Pegawai (){
+        return view('pegawai/inputPegawai');
+    }
+
     public function tamu()
     {
         return view('tamu.listTamu');

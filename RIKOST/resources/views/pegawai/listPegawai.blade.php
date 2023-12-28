@@ -1,7 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Pegawai')
+@section('title', 'DATA STAFF')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
+@section('css')
+<!-- masukin link file css disini contoh: <link rel="stylesheet" href="css/home.css"> -->
+<link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
 @section('content')
 <!-- masukin isi content disini -->
@@ -10,7 +13,7 @@
 <div class="container mt-5">
   <h2>Tabel Pegawai</h2>
   <div class="d-flex justify-content-end">
-    <a class="btn btn-primary"href="inputPegawai">Tambah</a>
+    <a class="btn btn-primary"href="/input_pegawai">Tambah</a>
   </div>
   <br>
   <table class="table table-bordered">

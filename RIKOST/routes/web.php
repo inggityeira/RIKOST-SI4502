@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
 use App\Http\Controllers\kebersihanController;
 use App\Http\Controllers\PembayaranController;
-
+use App\Http\Controllers\pegawaiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +66,8 @@ Route::get('/pembayaran/destroy/{id_pembayaran}', [PembayaranController::class, 
 
 // nadya
 Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');
+Route::get('/input_pegawai', [halamanController::class,'input_Pegawai']);
+Route::post('/input-data-pegawai' ,[pegawaiController::class,'store'])->name('input-data-pegawai');
 
 // lanang
 Route::get('/tamu', [halamanController::class, 'tamu'])->middleware('isLoggedIn');
