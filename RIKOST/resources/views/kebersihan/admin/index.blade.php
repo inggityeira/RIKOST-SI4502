@@ -58,4 +58,52 @@
 </div>
 
 
+
+<div class="card mb-4 mt-5">
+    <div class="card-body">
+        <div class="d-flex justify-content-between mb-2 mt-2">
+            <h3 class="text-secondary"><strong>Status Layanan Kebersihan</strong></h3>
+
+        </div>
+        <div class="table-responsive">
+            <table id="userTable" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="text-center">No</th>
+                        <th class="text-center">Nama Penyewa</th>
+                        <th class="text-center">Nama Pegawai</th>
+                        <th class="text-center">Tanggal Pembayaran</th>
+                        <th class="text-center">Status Pembayaran</th>
+                        <th class="text-center">Status Kebersihan</th>
+                        <th class="text-center">Lokasi Kebersihan</th>
+                        <th class="text-center">Catatan</th>
+                        <th class="text-center">Durasi</th>
+                        <th class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($datas as $key => $data)
+                    <tr>
+                        <td class="text-center">{{$key+=1}}</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text"></td>
+                        <td class="text"></td>
+                        <td class="text"></td>
+                        <td class="text"></td>
+                        <td class="text"></td>
+                        <td class="text"></td>
+                        <td class="text">
+                        </td>
+                        
+                        
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
 @endsection

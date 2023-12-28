@@ -36,7 +36,7 @@
                   <h5 class="card-title">{{ $data->judul }}</h5>
                   <p class="card-text">{{ $data->deskripsi }}</p>
                   <h5>Rp. {{ $data->harga }}</h5>
-                  <a href="/kebersihan-pembayaran" class="btn btn-primary">Pesan Sekarang</a>
+                  <a href="{{ url('kebersihan-pembayaran', $data->id) }}  " class="btn btn-primary">Pesan Sekarang</a>
               </div>
           </div>
       </div>

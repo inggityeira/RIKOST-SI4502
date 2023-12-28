@@ -27,7 +27,7 @@ class halamanController extends Controller
     {
         return view('laundry.newLaundry');
     }
-    
+
     public function servicelaundry()
     {
         return view('laundry.serviceLaundry');
@@ -53,16 +53,8 @@ class halamanController extends Controller
         return view('kamar.listKamar');
     }
 
-    public function kebersihan()
-    {
-        $datas = layoutkebersihan::all();
-        return view('kebersihan.index', compact('datas'));
-    }
 
-    public function kebersihanpembayaran()
-    {
-        return view('kebersihan.pembayaran');
-    }
+
 
     public function pembayaran()
     {

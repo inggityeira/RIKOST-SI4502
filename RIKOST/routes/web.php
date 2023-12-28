@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
 use App\Http\Controllers\kebersihanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\checkoutKebersihanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,8 +47,8 @@ Route::get('/updatepenyewa', [halamanController::class, 'updatepenyewa'])->middl
 Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');
 
 // firas
-Route::get('/kebersihan', [halamanController::class, 'kebersihan'])->middleware('isLoggedIn');
-Route::get('/kebersihan-pembayaran', [halamanController::class, 'kebersihanpembayaran'])->middleware('isLoggedIn');
+Route::get('/kebersihan', [checkoutKebersihanController::class, 'index'])->middleware('isLoggedIn');
+Route::get('/kebersihan-pembayaran/{id}', [checkoutKebersihanController::class, 'show'])->middleware('isLoggedIn');
 Route::get('/kebersihan-admin', [kebersihanController::class, 'index'])->middleware('isLoggedIn');
 Route::get('/kebersihan-admin-create', [kebersihanController::class, 'create'])->middleware('isLoggedIn');
 Route::post('/kebersihan-admin-store', [kebersihanController::class, 'store'])->middleware('isLoggedIn');

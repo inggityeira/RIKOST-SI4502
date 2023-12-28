@@ -20,7 +20,7 @@
                 <a class="nav-link active me-4" aria-current="page" href="/kamar">Kamar</a>
                 <a class="nav-link active me-4" aria-current="page" href="/pembayaran">Pembayaran</a>
                 <a class="nav-link active me-4" aria-current="page" href="/laundry">Laundry</a>
-                <a class="nav-link active me-4" aria-current="page" href="/kebersihan">Kebersihan</a>
+                <a class="nav-link active me-4" aria-current="page" href="{{ url('/kebersihan-admin') }}">Kebersihan</a>
                 <a class="nav-link active me-4" aria-current="page" href="/pegawai">Pegawai</a>
                 <a class="nav-link active me-4" aria-current="page" href="/tamu">Tamu</a>
                 <a class="btn btn-dark" style="background-color:#000000;" aria-current="page" href="/logout">Logout</a>
