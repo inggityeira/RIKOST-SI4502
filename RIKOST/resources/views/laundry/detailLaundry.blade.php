@@ -23,7 +23,7 @@
         </p>
     </div>
 
-    <div class="d-flex align-items-center py-5 position-absolute start-50 translate-middle-x" style="width:550px; background: #F3F3F3; border-radius: 22px;">
+    <div class="d-flex align-items-center py-5 position-absolute start-50 translate-middle-x" style="width:700px; background: #F3F3F3; border-radius: 22px;">
         <div class="container">
             <div class="row">
                 <div class="col-ms-9 col-lg-10 mx-auto">
