@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\layoutkebersihan;
 
 use Illuminate\Http\Request;
+use App\Models\laundry;
 
 class halamanController extends Controller
 {
@@ -27,7 +28,7 @@ class halamanController extends Controller
     {
         return view('laundry.newLaundry');
     }
-    
+
     public function servicelaundry()
     {
         return view('laundry.serviceLaundry');
@@ -53,16 +54,8 @@ class halamanController extends Controller
         return view('kamar.listKamar');
     }
 
-    public function kebersihan()
-    {
-        $datas = layoutkebersihan::all();
-        return view('kebersihan.index', compact('datas'));
-    }
 
-    public function kebersihanpembayaran()
-    {
-        return view('kebersihan.pembayaran');
-    }
+
 
     public function pembayaran()
     {

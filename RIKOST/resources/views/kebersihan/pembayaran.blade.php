@@ -22,14 +22,11 @@
                   <h5 class="card-title">RINGKASAN PRODUK</h5>
                 </div>
                 <div class="card-body">
-                    <p>Daily Cleaning 1 Jam <br>
-                        Rp 12.500</p>
+                    <p>{{ $datas->judul }} <br>
+                       RP.{{ $datas->harga }}</p>
                         <hr>
                   <form>
-                    <div class="form-group">
-                        <label for="catatan">Catatan</label>
-                        <input type="text" class="form-control" id="catatan" placeholder="Masukkan catatan">
-                      </div>
+
                     <div class="form-group">
                       <label for="nama">Nama</label>
                       <input type="text" class="form-control" id="nama" placeholder="Masukkan nama">
@@ -42,7 +39,10 @@
                         <label for="notlp">Nomor Telpon</label>
                         <input type="text" class="form-control" id="notllp" placeholder="Masukkan nomor telpon">
                       </div>
-
+                      <div class="form-group">
+                        <label for="catatan">Catatan</label>
+                        <textarea type="text" class="form-control" id="catatan" placeholder="Masukkan catatan"></textarea>
+                      </div>
                       <div class="form-group">
                         <label for="lokasi">Lokasi</label>
                         <textarea type="text" class="form-control" id="notllp" placeholder="Masukkan nomor telpon"> </textarea>

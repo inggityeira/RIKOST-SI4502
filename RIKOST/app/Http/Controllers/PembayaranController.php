@@ -17,7 +17,7 @@ class PembayaranController extends Controller
             'id_penyewa' => $request->id_penyewa,
             'tgl_pembayaran' => $request->tgl_pembayaran,
             'termin_pembayaran' => $request->termin_pembayaran,
-            'nominal_pembayaran' => $request->nominal_pembayaran,
+            'nominal_pembayaran' => $request->nominal_pembayaran, 
             'aspek_pembayaran' => $request->aspek_pembayaran,
             'metode_pembayaran' => $request->metode_pembayaran,
             'status_pembayaran' => $request->status_pembayaran,

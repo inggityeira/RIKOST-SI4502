@@ -3,9 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
+use App\Http\Controllers\laundryController;
 use App\Http\Controllers\kebersihanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\pegawaiController;
+use App\Http\Controllers\checkoutKebersihanController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +37,18 @@ Route::get('/landing', function () {
 // inggit
 Route::get('/laundry', [halamanController::class, 'laundry'])->middleware('isLoggedIn');
 Route::get('/detaillaundry', [halamanController::class, 'detaillaundry'])->middleware('isLoggedIn');
-Route::get('/listlaundry', [halamanController::class, 'listlaundry'])->middleware('isLoggedIn');
-Route::get('/newlaundry', [halamanController::class, 'newlaundry'])->middleware('isLoggedIn');
 Route::get('/servicelaundry', [halamanController::class, 'servicelaundry'])->middleware('isLoggedIn');
+
+// Route::get('/listlaundry', [halamanController::class, 'listlaundry'])->middleware('isLoggedIn')->name('laundry.list');
+Route::get('/listlaundry', [LaundryController::class, 'index'])->middleware('isLoggedIn')->name('laundry.list');
+// Route::get('/newlaundry', [halamanController::class, 'newlaundry'])->middleware('isLoggedIn');
+Route::get('/newlaundry', [LaundryController::class, 'newlaundry'])->middleware('isLoggedIn');
+Route::post('/laundry-store', [LaundryController::class, 'store'])->name('laundry.store');
+
+
+// Route::get('/laundry-new', [LaundryController::class, 'create'])->name('laundry.create');
+// Route::post('/laundry-store', [LaundryController::class, 'store'])->name('laundry.store');
+
 
 // laura
 Route::get('/penyewa', [halamanController::class, 'penyewa'])->middleware('isLoggedIn');
@@ -46,8 +59,8 @@ Route::get('/updatepenyewa', [halamanController::class, 'updatepenyewa'])->middl
 Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');
 
 // firas
-Route::get('/kebersihan', [halamanController::class, 'kebersihan'])->middleware('isLoggedIn');
-Route::get('/kebersihan-pembayaran', [halamanController::class, 'kebersihanpembayaran'])->middleware('isLoggedIn');
+Route::get('/kebersihan', [checkoutKebersihanController::class, 'index'])->middleware('isLoggedIn');
+Route::get('/kebersihan-pembayaran/{id}', [checkoutKebersihanController::class, 'show'])->middleware('isLoggedIn');
 Route::get('/kebersihan-admin', [kebersihanController::class, 'index'])->middleware('isLoggedIn');
 Route::get('/kebersihan-admin-create', [kebersihanController::class, 'create'])->middleware('isLoggedIn');
 Route::post('/kebersihan-admin-store', [kebersihanController::class, 'store'])->middleware('isLoggedIn');

@@ -31,9 +31,15 @@
                 <p style="color: #A38859;"><strong>Create Order</strong></p>
 
                 <form>
+                <select name="id_pegawai" required>
+                    @foreach ($pegawai as $staff)
+                        <option value="{{ $staff->id_pegawai }}">{{ $staff->nama_pegawai }}</option>
+                    @endforeach
+                </select>
+
                     <div class="mb-3">
                         <label for="inputName" class="form-label"><h3 style="color:black; font-size:18px;">Customer Name</h3></label>
-                        <input type="text" class="form-control"  name="nameLaundry" style="border-radius: 7px; background: #E4E4E4;">
+                        <input type="text" class="form-control"  name="nameLaundry" style="border-radius: 7px; background: #E4E4E4;" value="" disable>
                     </div>
 
                     <div class="mb-3">
@@ -44,6 +50,11 @@
                     <div class="mb-3">
                         <label for="inputWeight" class="form-label"><h3 style="color:black; font-size:18px;">Laundry Weight</h3></label>
                         <input type="text" class="form-control"  name="weightLaundry" style="border-radius: 7px; background: #E4E4E4;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputWeight" class="form-label"><h3 style="color:black; font-size:18px;">Bill</h3></label>
+                        <input type="number" class="form-control"  name="laundrybill" style="border-radius: 7px; background: #E4E4E4;">
                     </div>
 
                     <div class="mb-3">
@@ -59,6 +70,11 @@
                     <div class="mb-3">
                         <label for="inputStaff" class="form-label"><h3 style="color:black; font-size:18px;">Staff</h3></label>
                         <input type="text" class="form-control"  name="staffLaundry" style="border-radius: 7px; background: #E4E4E4;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputPickup" class="form-label"><h3 style="color:black; font-size:18px;">Status</h3></label>
+                        <input type="date" class="form-control"  name="statusLaundry" style="border-radius: 7px; background: #E4E4E4;">
                     </div>
 
                     <button type="submit" class="btn position-absolute end-0" style="background-color:#A38859; margin-right:55px; color:white; font-weight: 600;">Add to Cart</button>
