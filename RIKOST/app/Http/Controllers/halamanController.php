@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\layoutkebersihan;
 
 use Illuminate\Http\Request;
+use App\Models\laundry;
 
 class halamanController extends Controller
 {

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
+use App\Http\Controllers\laundryController;
 use App\Http\Controllers\kebersihanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\checkoutKebersihanController;
@@ -34,9 +35,18 @@ Route::get('/landing', function () {
 // inggit
 Route::get('/laundry', [halamanController::class, 'laundry'])->middleware('isLoggedIn');
 Route::get('/detaillaundry', [halamanController::class, 'detaillaundry'])->middleware('isLoggedIn');
-Route::get('/listlaundry', [halamanController::class, 'listlaundry'])->middleware('isLoggedIn');
-Route::get('/newlaundry', [halamanController::class, 'newlaundry'])->middleware('isLoggedIn');
 Route::get('/servicelaundry', [halamanController::class, 'servicelaundry'])->middleware('isLoggedIn');
+
+// Route::get('/listlaundry', [halamanController::class, 'listlaundry'])->middleware('isLoggedIn')->name('laundry.list');
+Route::get('/listlaundry', [LaundryController::class, 'index'])->middleware('isLoggedIn')->name('laundry.list');
+// Route::get('/newlaundry', [halamanController::class, 'newlaundry'])->middleware('isLoggedIn');
+Route::get('/newlaundry', [LaundryController::class, 'newlaundry'])->middleware('isLoggedIn');
+Route::post('/laundry-store', [LaundryController::class, 'store'])->name('laundry.store');
+
+
+// Route::get('/laundry-new', [LaundryController::class, 'create'])->name('laundry.create');
+// Route::post('/laundry-store', [LaundryController::class, 'store'])->name('laundry.store');
+
 
 // laura
 Route::get('/penyewa', [halamanController::class, 'penyewa'])->middleware('isLoggedIn');

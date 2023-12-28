@@ -61,7 +61,15 @@
                         <input type="text" class="form-control"  name="staffLaundry" style="border-radius: 7px; background: #E4E4E4;" value="" disable>
                     </div>
 
-                    <button type="submit" class="btn position-absolute end-0" style="background-color:#A38859; margin-right:55px; color:white; font-weight: 600;">Add to Cart</button>
+                    <div class="row position-absolute end-0">
+                        <div class="col">
+                            <button type="submit" class="btn" style="background-color:#A38859; color:white; font-weight: 600;">Add to Cart</button>
+                        </div>
+                        <div class="col">
+                        <button type="submit" class="btn btn-danger" style="margin-right:55px; color:white; font-weight: 600;">Delete</button>
+                        </div>
+                    </div>
+                    
                 </form>
 
                 </div>
