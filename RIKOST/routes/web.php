@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
 use App\Http\Controllers\kebersihanController;
+use App\Http\Controllers\PembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,12 @@ Route::put('/kebersihan-admin-update/{id}', [kebersihanController::class, 'updat
 
 // nikita
 Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');
+Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');
+Route::get('/pembayaran', [PembayaranController::class, 'index'])->middleware('isLoggedIn');
+Route::get('/pembayaran/store', [PembayaranController::class, 'store'])->middleware('isLoggedIn');
+Route::get('/pembayaran/edit/{id_pembayaran}', [PembayaranController::class, 'edit'])->middleware('isLoggedIn');
+Route::get('/pembayaran/update/{id_pembayaran}', [PembayaranController::class, 'update'])->middleware('isLoggedIn');
+Route::get('/pembayaran/destroy/{id_pembayaran}', [PembayaranController::class, 'destroy'])->middleware('isLoggedIn');
 
 // nadya
 Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');

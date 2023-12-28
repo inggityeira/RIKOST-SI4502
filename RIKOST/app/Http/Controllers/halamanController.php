@@ -66,7 +66,8 @@ class halamanController extends Controller
 
     public function pembayaran()
     {
-        return view('pembayaran.listPembayaran');
+        $list = Pembayaran::all();
+        return view('pembayaran.listPembayaran', compact('list'));
     }
 
     public function pegawai()
