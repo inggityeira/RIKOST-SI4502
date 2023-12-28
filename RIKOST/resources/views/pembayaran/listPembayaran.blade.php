@@ -5,8 +5,6 @@
 
 @push('css')
 <!-- masukin <link> yang nyambungin ke file css -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 @section('content')
 <!-- masukin isi content disini -->
@@ -96,6 +94,15 @@
                 <label for="exampleFormControlInput1">Status Pembayaran</label>
                 <input type="string" class="form-control" name="status_pembayaran">
             </div>
+            <div class="dropdown"  style = "background-color: #F5F5DC ; color : white>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose One
+            </button>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item active" href="#" aria-current="true">LUNAS</a></li> 
+            <li><a class="dropdown-item" href="#">BELUM LUNAS</a></li>
+          </ul>
+          </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
