@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', '..........')
+@section('title', 'input pegawai')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @section('css')
