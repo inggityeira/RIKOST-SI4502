@@ -86,4 +86,4 @@ Route::post('/input-data-pegawai', [pegawaiController::class, 'store'])->name('i
 // lanang
 Route::get('/tamu', [halamanController::class, 'tamu'])->middleware('isLoggedIn');
 Route::get('/inputTamu', [halamanController::class, 'inputTamu'])->middleware('isLoggedIn')->name('inputTamu');
-Route::get('/liatTamu', [halamanController::class, 'liatTamu'])->middleware('isLoggedIn');
+Route::get('/liatTamu', [halamanController::class, 'liatTamu'])->middleware('isLoggedIn')->name('liatTamu');
