@@ -1,54 +1,57 @@
 @extends('layouts.main')
 
 @section('title', 'RIKOST | Daftar Tamu')
-<!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @push('css')
-<!-- masukin <link> yang nyambungin ke file css -->
+<!-- Add any additional CSS links if needed -->
 @endpush
 
 @section('content')
-<!-- masukin isi content disini -->
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2 class="mb-0">Buku Tamu Kostan</h2>
-        <a href="{{ route('inputTamu') }}" class="btn btn-primary">+ Tamu Baru</a>
+        <a href="{{ route('createTamu') }}" class="btn btn-primary">+ Tamu Baru</a>
     </div>
 </div>
 
-<div class="table-responsive p-3">
+<div class="table-responsive p-4 borderline">
     <table class="table table-striped table-sm font">
         <thead>
             <tr>
                 <th scope="col">No Tamu</th>
                 <th scope="col">Nama Tamu</th>
                 <th scope="col">No.HP</th>
-                <th scope="col">Kartu Identitas</th>
+                <th scope="col">Masuk</th>
+                <th scope="col">Keluar</th>
                 <th scope="col">Kamar</th>
-                <th scope="col">Check-in</th>
-                <th scope="col">Check-out</th>
-                <th scope="col">Kamar</th>
-                <th scope="col">Penyewa</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($tamu as $item)
             <tr>
-                <td>1,001</td>
-                <td>random</td>
-                <td>data</td>
-                <td>KTP</td>
-                <td>kamar</td>
-                <td>cekin</td>
-                <td>cekot</td>
-                <td>kamar</td>
-                <td>penyewa</td>
+                <td>{{ $item->id_tamu }}</td>
+                <td>{{ $item->nama_tamu }}</td>
+                <td>{{ $item->no_hp_tamu }}</td>
+                <td>{{ $item->waktu_checkin }}</td>
+                <td>{{ $item->waktu_checkout }}</td>
+                <td>{{ $item->id_kamar }}</td>
                 <td>
-                    <a href="{{ route('liatTamu') }}" class="badge bg-warning"><span data-feather="edit"></ span></a>
-                    <a href="" class="badge bg-danger"><span data-feather="x-circle"></ span></a>
-                </td>
-            </tr>
+                    <a href="{{ route('detailTamu', $item->id_tamu) }}" class="badge bg-warning"><span
+                            data-feather="edit"></span></a>
 
+                    <form action="{{ route('tamu.destroy', $item->id_tamu) }}" method="post" style="display: inline;">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="badge bg-danger" style="border: none"
+                            onclick="return confirm('Apakah kamu yakin untuk menghapus tamu ini dari daftar?')">
+                            <span data-feather="x-circle"></span>
+                        </button>
+                    </form>
+                </td>
+
+            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
@@ -57,5 +60,4 @@
 <script>
     feather.replace();
 </script>
-
 @endsection
