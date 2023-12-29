@@ -3,10 +3,6 @@
 @section('title', 'RIKOST | Update Penyewa')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
-@push('css')
-    <!-- masukin <link> yang nyambungin ke file css -->
-@endpush
-
 @section('content')
 <!-- masukin isi content disini -->
 <div class="card">
@@ -14,33 +10,38 @@
             <h2>Update Data Penyewa</h2>
 
                 <div class="form-group">
+                    <label for="id_penyewa">Masukan Id</label>
+                    <input type="integer" name="id_penyewa" id="id_penyewa" class="form-control" value="{{ $penyewa->nama_penyewa }}">
+                </div>
+
+                <div class="form-group">
                     <label for="nama_penyewa">Nama Penyewa</label>
-                    <input type="text" name="nama_penyewa" id="nama_penyewa" class="form-control" value="{{ $penyewa->nama_penyewa }}">
+                    <input type="string" name="nama_penyewa" id="nama_penyewa" class="form-control" value="{{ $penyewa->nama_penyewa }}">
                 </div>
 
                 <div class="form-group">
                     <label for="kontak_penyewa">Kontak Penyewa</label>
-                    <input type="text" name="kontak_penyewa" id="kontak_penyewa" class="form-control" value="{{ $penyewa->kontak_penyewa }}">
+                    <input type="string" name="kontak_penyewa" id="kontak_penyewa" class="form-control" value="{{ $penyewa->kontak_penyewa }}">
                 </div>
 
                 <div class="form-group">
                     <label for="NIK_penyewa">NIK Penyewa</label>
-                    <input type="text" name="NIK_penyewa" id="NIK_penyewa" class="form-control" value="{{ $penyewa->NIK_penyewa }}">
+                    <input type="string" name="NIK_penyewa" id="NIK_penyewa" class="form-control" value="{{ $penyewa->NIK_penyewa }}">
                 </div>
 
                 <div class="form-group">
                     <label for="nama_ortu">Nama Orang Tua</label>
-                    <input type="text" name="nama_ortu" id="nama_ortu" class="form-control" value="{{ $penyewa->nama_ortu }}">
+                    <input type="string" name="nama_ortu" id="nama_ortu" class="form-control" value="{{ $penyewa->nama_ortu }}">
                 </div>
 
                 <div class="form-group">
                     <label for="kontak_ortu">Kontak Orang Tua</label>
-                    <input type="text" name="kontak_ortu" id="kontak_ortu" class="form-control" value="{{ $penyewa->kontak_ortu }}">
+                    <input type="string" name="kontak_ortu" id="kontak_ortu" class="form-control" value="{{ $penyewa->kontak_ortu }}">
                 </div>
 
                 <div class="form-group">
                     <label for="waktu_sewa">Waktu Sewa</label>
-                    <input type="text" name="waktu_sewa" id="waktu_sewa" class="form-control" value="{{ $penyewa->waktu_sewa }}">
+                    <input type="string" name="waktu_sewa" id="waktu_sewa" class="form-control" value="{{ $penyewa->waktu_sewa }}">
                 </div>
 
                 <div class="form-group">
@@ -50,7 +51,7 @@
 
                 <div class="form-group">
                     <label for="fasilitas_umum">Fasilitas Umum</label>
-                    <input type="text" name="fasilitas_umum" id="fasilitas_umum" class="form-control" value="{{ $penyewa->fasilitas_umum }}">
+                    <input type="string" name="fasilitas_umum" id="fasilitas_umum" class="form-control" value="{{ $penyewa->fasilitas_umum }}">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
