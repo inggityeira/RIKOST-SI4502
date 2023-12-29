@@ -11,7 +11,7 @@
 <!-- masukin isi content disini -->
 <div class="card">
     <div class="card-header">
-        <h2 class="mb-0">Buku Tamu Kostan</h2>
+        <h2 class="mb-0">Edit Tamu</h2>
     </div>
     <div class="card-body col-lg-4 ">
         @if(session('success'))

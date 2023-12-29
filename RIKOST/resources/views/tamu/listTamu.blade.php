@@ -37,9 +37,7 @@
                 <td>1,001</td>
                 <td>random</td>
                 <td>data</td>
-                <td>
-                    <a href="" class="badge bg-info"> <span data-feather="eye"></span></a>
-                </td>
+                <td>KTP</td>
                 <td>kamar</td>
                 <td>cekin</td>
                 <td>cekot</td>

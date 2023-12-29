@@ -11,7 +11,7 @@
 <!-- masukin isi content disini -->
 <div class="card">
     <div class="card-header">
-        <h2 class="mb-0">Buku Tamu Kostan</h2>
+        <h2 class="mb-0">Tambah Tamu Baru</h2>
     </div>
     <div class="card-body col-lg-4 ">
         @if(session('success'))
@@ -33,7 +33,11 @@
 
             <div class="form-group">
                 <label for="kartu_identitas">Kartu Identitas:</label>
-                <input type="file" class="form-control mb-3" name="kartu_identitas">
+                <select class="form-control mb-3" name="kartu_identitas">
+                    <option value="KTP">KTP</option>
+                    <option value="SIM">SIM</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
             </div>
 
             <div class="form-group">
