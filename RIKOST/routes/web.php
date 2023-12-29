@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TamuController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\halamanController;
@@ -79,6 +80,11 @@ Route::get('/input_pegawai', [halamanController::class, 'input_Pegawai']);
 Route::post('/input-data-pegawai', [pegawaiController::class, 'store'])->name('input-data-pegawai');
 
 // lanang
-Route::get('/tamu', [halamanController::class, 'tamu'])->middleware('isLoggedIn');
-Route::get('/inputTamu', [halamanController::class, 'inputTamu'])->middleware('isLoggedIn')->name('inputTamu');
-Route::get('/liatTamu', [halamanController::class, 'liatTamu'])->middleware('isLoggedIn')->name('liatTamu');
+Route::get('/tamu', [TamuController::class, 'index'])->middleware('isLoggedIn')->name('tamu');
+Route::get('/createTamu', [TamuController::class, 'createTamu'])->middleware('isLoggedIn')->name('createTamu');
+Route::get('/liatTamu', [TamuController::class, 'liatTamu'])->middleware('isLoggedIn')->name('liatTamu');
+Route::post('/tamu-store', [TamuController::class, 'store'])->name('tamu.store');
+Route::delete('/tamu/{id_tamu}', [TamuController::class, 'destroy'])->name('tamu.destroy');
+Route::get('/detailTamu/{id_tamu}', [TamuController::class, 'detailTamu'])->middleware('isLoggedIn')->name('detailTamu');
+Route::put('/updateTamu/{id_tamu}', [TamuController::class, 'updateTamu'])->middleware('isLoggedIn')->name('updateTamu');
+
