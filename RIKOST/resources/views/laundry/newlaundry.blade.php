@@ -37,10 +37,6 @@
                     </div>
                 @endif
 
-                @if(Session::has('fail'))
-                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                @endif
-
                 @csrf
                     <div class="mb-3">
                         <label for="inputName" class="form-label"><h3 style="color:black; font-size:18px;">Customer Name</h3></label>
@@ -70,12 +66,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputWeight" class="form-label"><h3 style="color:black; font-size:18px;">Laundry Weight</h3></label>
+                        <label for="inputWeight" class="form-label"><h3 style="color:black; font-size:18px;">Laundry Weight (Kg)</h3></label>
                         <input type="number" class="form-control"  name="weightLaundry" style="border-radius: 7px; background: #E4E4E4;">
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputWeight" class="form-label"><h3 style="color:black; font-size:18px;">Bill</h3></label>
+                        <label for="inputBill" class="form-label"><h3 style="color:black; font-size:18px;">Bill (Rp)</h3></label>
                         <input type="number" class="form-control"  name="laundrybill" style="border-radius: 7px; background: #E4E4E4;">
                     </div>
 
