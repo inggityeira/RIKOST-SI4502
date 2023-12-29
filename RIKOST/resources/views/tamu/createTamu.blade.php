@@ -32,15 +32,6 @@
             </div>
 
             <div class="form-group">
-                <label for="kartu_identitas">Kartu Identitas:</label>
-                <select class="form-control mb-3" name="kartu_identitas">
-                    <option value="KTP">KTP</option>
-                    <option value="SIM">SIM</option>
-                    <option value="Lainnya">Lainnya</option>
-                </select>
-            </div>
-
-            <div class="form-group">
                 <label for="waktu_checkin">Waktu Check-in:</label>
                 <input type="date" class="form-control mb-3" name="waktu_checkin" required>
             </div>

@@ -15,7 +15,15 @@ class pegawai extends Model
         'nama_pegawai', 'jabatan_pegawai', 'kontak_pegawai', 'alamat_pegawai', 'norek_pegawai', 'status_pegawai'
     ];
 
-    public function laundry(){
+    public function laundry()
+    {
         return $this->hasMany(laundry::class);
+
+    }
+
+    public function Tamu()
+    {
+        return $this->hasMany(Tamu::class);
+
     }
 }
