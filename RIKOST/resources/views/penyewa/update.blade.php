@@ -11,7 +11,7 @@
 
                 <div class="form-group">
                     <label for="id_penyewa">Masukan Id</label>
-                    <input type="integer" name="id_penyewa" id="id_penyewa" class="form-control" value="{{ $penyewa->nama_penyewa }}">
+                    <input type="integer" name="id_penyewa" id="id_penyewa" class="form-control" value="{{ $id_penyewa->id_penyewa }}">
                 </div>
 
                 <div class="form-group">
