@@ -37,6 +37,9 @@ Route::get('/landing', function () {
     return view('landing.landing');
 });
 
+Route::get('/ourteam', function () {
+    return view('landing.ourteam');
+});
 // inggit
 Route::get('/laundry', [LaundryController::class, 'informasi'])->middleware('isLoggedIn')->name('laundry.list');
 Route::get('/newlaundry', [LaundryController::class, 'newlaundry'])->middleware('isLoggedIn')->name('laundry.new');
