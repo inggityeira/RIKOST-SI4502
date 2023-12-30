@@ -26,11 +26,13 @@
         <div class="col">
             <section id='landpage'>
                 <p>WELCOME!</p>
-                <h1>let’s improve our boarding house services!<br>A well-managed place is a home away from home.<br> Let’s strive for excellence together!</h1>
+                <h1>Let’s improve our boarding house services! A well-managed place<br>is a home away from home. Let’s strive for excellence together!</h1>
+                <a class="btn" style="background-color:#A38859; color:white; font-weight: 600; " aria-current="page" href="/signup">Let's Get Started</a>
             </section>
         </div>
         <div class="col">
-            <img src="img/landing.png" alt="landing" id="foto">
+            <img src="img/landingvektor.png" alt="landingvektor" id="overlay">
+            <img src="img/landing.png" alt="landing" class="overlay-image" id="foto">
         </div>
     </div>
     </div>
