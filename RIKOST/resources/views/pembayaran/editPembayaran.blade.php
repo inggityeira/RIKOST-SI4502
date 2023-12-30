@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Pembayaran')
+@section('title', 'RIKOST | PEMBAYARAN')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @push('css')
@@ -12,7 +12,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tabel Pembayaran</title>
+  <title>Pembayaran RIKOST</title>
 </head>
 <body>
 
