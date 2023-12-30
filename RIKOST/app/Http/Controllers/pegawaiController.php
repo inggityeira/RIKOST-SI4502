@@ -7,10 +7,6 @@ use App\Models\pegawai;
 
 class pegawaiController extends Controller
 {
-    public function index()
-    {
-      
-    }
 
     public function store (Request $request)
     {
@@ -27,15 +23,15 @@ class pegawaiController extends Controller
     }
     public function updatePegawai (Request $request, $id_pegawai)
     {
-        $pegawai = pegawai::findorfail ($id_pegawai);
+        $pegawai = pegawai::findorfail($id_pegawai);
         $pegawai-> update([
-            'id_pegawai' => $request-> id_pegawai,
-            'nama_pegawai' => $request-> nama_pegawai,
-            'jabatan_pegawai' => $request-> jabatan_pegawai,
-            'kontak_pegawai' => $request-> kontak_pegawai,
-            'alamat_pegawai' => $request-> alamat_pegawai,
-            'norek_pegawai' => $request-> norek_pegawai,
-            'status_pegawai' => $request-> status_pegawai,
+            'id_pegawai' => $request->id_pegawai,
+            'nama_pegawai' => $request->nama_pegawai,
+            'jabatan_pegawai' => $request->jabatan_pegawai,
+            'kontak_pegawai' => $request->kontak_pegawai,
+            'alamat_pegawai' => $request->alamat_pegawai,
+            'norek_pegawai' => $request->norek_pegawai,
+            'status_pegawai' => $request->status_pegawai,
         ]);
         return redirect('/pegawai');
         // return redirect ('/pegawai', compact('pegawai'))->with('pegawai', $pegawai);
@@ -48,14 +44,19 @@ class pegawaiController extends Controller
         return view('pegawai.listPegawai', compact('pegawai'));
     }
 
-    public function editForm($id_pegawai){
-        $pegawai = pegawai::findOrfail($id_pegawai);
-        return view('pegawai.detailpegawai', compact('$pegawai'));
+    public function editForm($id_pegawai)
+    {
+        $pegawai = pegawai::where('id_pegawai',$id_pegawai)->first();
+        return view('pegawai.detailPegawai', compact('pegawai'));
+        return redirect()->route('editPegawai');
+
     }
-    // public function editForm($id){
-    //     $pegawaiEditForm=pegawai::where('id_pegawai', $id);
-    //     return view ('pegawai.detailpegawai', compact('pegawaiEditForm'));
-    // }
+
+    public function delete($id_pegawai){
+        $delete=pegawai::where('id_pegawai', $id_pegawai);
+        $delete->delete();
+        return back();
+    }
 }
 
 
