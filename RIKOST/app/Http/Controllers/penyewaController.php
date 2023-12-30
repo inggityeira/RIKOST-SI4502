@@ -60,12 +60,11 @@ class penyewaController extends Controller
         return redirect()->route('penyewa.penyewa')->with('success', 'Order updated successfully');
     }
 
-    public function destroy($id_penyewa)
+    public function delete(Request $request, $id_penyewa)
     {
-    $penyewa = Penyewa::findOrFail($id_penyewa);
+        $customer = Penyewa::findOrFail($id_penyewa);
+        $customer->delete();
 
-    $penyewa->delete();
-
-    return redirect()->route('penyewa.penyewa')->with('success', 'Data deleted successfully!');
+        return redirect()->route('penyewa.penyewa')->with('success', 'Order deleted successfully');
     }
 }
