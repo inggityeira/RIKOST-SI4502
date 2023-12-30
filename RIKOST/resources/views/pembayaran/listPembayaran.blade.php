@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Pembayaran')
+@section('title', 'RIKOST | PEMBAYARAN')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @push('css')
@@ -12,12 +12,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tabel Pembayaran</title>
+  <title>Pembayaran RIKOST</title>
 </head>
 <body>
 
 <div class="container mt-5">
-  <h2>Tabel Pembayaran</h2>
+  <h2>Pembayaran RIKOST</h2>
   <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahModal">Add New</button>
   <table class="table">
     <thead>
@@ -27,8 +27,8 @@
         <th>Tanggal Pembayaran</th>
         {{-- <th>Termin Pembayaran</th>
         <th>Nominal Pembayaran</th>
-        <th>Aspek Pembayaran</th>
         <th>Metode Pembayaran</th> --}}
+        <th>Aspek Pembayaran</th>
         <th>Status Pembayaran</th>
         <th>Action</th>
       </tr>
@@ -41,8 +41,8 @@
                 <td>{{ $item->tgl_pembayaran }}</td>
                 {{-- <td>{{ $item->termin_pembayaran }}</td>
                 <td>{{ $item->nominal_pembayaran }}</td>
-                <td>{{ $item->aspek_pembayaran }}</td>
                 <td>{{ $item->metode_pembayaran }}</td> --}}
+                <td>{{ $item->aspek_pembayaran }}</td>
                 <td>{{ $item->status_pembayaran }}</td>
                 <td>
                   <a href="/pembayaran/detail/{{ $item->id_pembayaran }}">
@@ -92,7 +92,11 @@
           <!-- Termin Pembayaran -->
           <div class="mb-3">
             <label for="termin_pembayaran" class="form-label">Termin Pembayaran</label>
-            <input type="text" name="termin_pembayaran" id="termin_pembayaran" class="form-control" placeholder="Termin Pembayaran" />
+            <select name="termin_pembayaran" id="termin_pembayaran" class="form-select">
+              <option value="Satu">1</option>
+              <option value="Dua">2</option>
+              <!-- Tambahkan opsi lain sesuai kebutuhan Anda -->
+            </select>
           </div>
 
           <!-- Nominal Pembayaran -->
@@ -104,9 +108,16 @@
           <!-- Aspek Pembayaran -->
           <div class="mb-3">
             <label for="aspek_pembayaran" class="form-label">Aspek Pembayaran</label>
-            <input type="text" name="aspek_pembayaran" id="aspek_pembayaran" class="form-control" placeholder="Aspek Pembayaran" />
+            <select name="aspek_pembayaran" id="aspek_pembayaran" class="form-select">
+              <option value="Kosan Tipe Kamar Suite">Kosan Tipe Kamar Suite</option>
+              <option value="Kosan Tipe Kamar Medium">Kosan Tipe Kamar Medium</option>
+              <option value="Kosan Tipe Kamar Reguler">Kosan Tipe Kamar Reguler</option>
+              <option value="Laundry">Laundry</option>
+              <option value="Kebersihan">Kebersihan</option>
+              <!-- Tambahkan opsi lain sesuai kebutuhan Anda -->
+            </select>
           </div>
-
+          
           <!-- Metode Pembayaran -->
           <div class="mb-3">
             <label for="metode_pembayaran" class="form-label">Metode Pembayaran</label>
@@ -126,8 +137,8 @@
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-          <button type="submit" class="btn btn-success">Simpan</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style = "background-color: red ; color : white">Close</button>
+          <button type="submit" class="btn btn-success" >Save</button>
         </div>
       </form>
     </div>

@@ -3,6 +3,10 @@
 @section('title', 'RIKOST | IDENTITAS KAMAR')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
+@push('css')
+    <!-- masukin <link> yang nyambungin ke file css -->
+@endpush
+
 @section('content')
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -40,6 +44,7 @@
       </div>
     </div>
   </nav>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +60,11 @@
             
             <div class="col-md-8">
 
-                <h1>Suite Class Bedroom</h1>
+                <h1>{{ $data->jenis_kamar }}</h1>
                 <p>Alamat: Jalan Gatot Subroto no.24</p>
                 <p>Email: RIKOST@gmail.com</p>
                 <p>Telepon: +6281234567</p>
-                <p>Status: <a href="#" class="btn btn-primary mr-2">Available</a></p>
+                <p>Status: <a href="#" class="btn btn-primary mr-2">{{ $data->status_kamar }}</a></p>
 
                 <div class="mt-3">
                     <a href="#" class="btn btn-primary mr-2">Facebook</a>
@@ -71,7 +76,11 @@
             </div><div class="col-md-4">
 
                 <a href="https://yt3.googleusercontent.com/1NIzmAWHaYMjO_MgOT7DrhvjiEneGmcgb4QXVZbh53dxJ2A8OmBaTbgSzRBrtHLucjLF8KSZRCI=s900-c-k-c0x00ffffff-no-rj" target="_blank">
-                    <img src="img/Kamar Suite class.jpeg" alt="Foto Profil" class="img-fluid rounded-circle">
+                  @if(!$data->foto_kamar)
+                    <img src="{{ asset('img/kamar.jpg')}}" alt="" class="img-fluid rounded-circle">
+                    @else
+                    <img src="{{ asset('storage/uploads/'.$data->foto_kamar)}}" class="img-fluid rounded-circle" alt="Foto Tidak Tersedia">
+                    @endif  
                 </a>
             </div>
             
@@ -99,16 +108,7 @@
             <ul class="list-unstyled">
                 <li>Fasilitas yang tercantum dapat digunakan oleh penghuni kost</li>
                 <li>
-                  <ul>
-                    <li>Air Conditioner</li>
-                    <li>Tempat Tidur</li>
-                    <li>Lemari pakaian</li>
-                    <li>Meja Belajar</li>
-                    <li>Lampu Tidur</li>
-                    <li>Kursi Belajar</li>
-                    <li>Kamar mandi dalam</li>
-                    <li>Water heater</li>
-                  </ul>
+                  {{ $data->fasililtas_kamar }}
                 </li>
               </ul>
           </figure>
@@ -116,52 +116,9 @@
         <h1 class="display-6">Harga</h1>
         <figure>
             <blockquote class="blockquote">
-              <p>Harga</p>
+              <p>{{ number_format($data->harga_kamar, 2, '.', ',')}}</p>
             </blockquote>
-            <figcaption class="blockquote-footer">
-                text
-            </figcaption>
-            <ul class="list-unstyled">
-                <li>text</li>
-                <li>
-                  <ul>
-                    <li>text</li>
-                  </ul>
-                </li>
-              </ul>
           </figure>
-          <hr style="border-width: 5px;">
-          <h1 class="display-6">text</h1>
-          <figure>
-              <blockquote class="blockquote">
-                <p>text</p>
-              </blockquote>
-              <figcaption class="blockquote-footer">
-                  text
-              </figcaption>
-              <ul class="list-unstyled">
-                  <li>text</li>
-                  <li>
-                    <ul>
-                      <li>text</li>
-                      <li>text</li>
-                    </ul>
-                  </li>
-                </ul>
-            </figure>
-            <hr style="border-width: 5px;">
-          <h1 class="display-6">text</h1>
-            <figure>
-              <ul class="list-unstyled">
-                  <li>
-                    <ul>
-                      <li>text</li>
-                      <li>textt</li>
-                      <li>textt</li>
-                    </ul>
-                  </li>
-                </ul>
-            </figure>
     </div>
     <div>
     </div>
@@ -173,4 +130,3 @@
 
 
 @endsection
-
