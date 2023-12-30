@@ -1,10 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Laundry')
-<!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
+@section('title', 'RIKOST | Penyewa')
 
 @section('content')
-<!-- masukin isi content disini -->
 <div class = "card" style = "margin : 20px;">
     <div class = "card-header" style = "background-color: #A38859 ; color : #FFFFFF">Penyewa Baru</div>
     <div class = "card-body">
