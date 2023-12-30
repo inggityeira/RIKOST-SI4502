@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <a type="submit" class="btn position-absolute end-0" href="/newlaundry" style="background-color:#A38859; margin-top:30px; margin-right:120px; color:white; font-weight: 600;">+ Add New Order</a>
+            <a href="{{route('laundry.new')}}" class="btn position-absolute end-0" style="background-color:#A38859; margin-top:30px; margin-right:120px; color:white; font-weight: 600;">+ Add New Order</a>
         </div>
     </div>
 
@@ -34,34 +34,34 @@
             <table class="table-striped table">
                 <thead>
                 <tr>
-                    <th>Customer</th>
+                    <th style="color:#A38859;">Customer</th>
                     <th>Service</th>
-                    <th>Laundry Weight</th>
-                    <th>Bill</th>
+                    <th>Laundry Weight (Kg)</th>
+                    <th>Bill (Rp)</th>
                     <th>Order Date</th>
                     <th>Pickup Date</th>
                     <th>Staff</th>
-                    <th>Status</th>
+                    <th style="color:#A38859;">Status</th>
                 </tr>
                 </thead>
                 <tbody>
                     @foreach ($laundry as $order)
                     <tr>
-                        <td><a href="{{ route('laundry.detail', ['id_laundry' => $order->id_laundry]) }}">{{ $order->id_penyewa}}</a></td>
-                        <td>{{ $order->jenis_laundry}}</td>
-                        <td>{{ $order->berat_laundry}}</td>
-                        <td>{{ $order->tagihan_laundry}}</td>
-                        <td>{{ $order->tgl_pemesanan}}</td>
-                        <td>{{ $order->tgl_selesai}}</td>
-                        <td>{{ $order->id_pegawai}}</td>
-                        <td>{{ $order->status_laundry}}</td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:#A38859;"><strong>{{ $order->id_penyewa}}</strong></a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->jenis_laundry}}</a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->berat_laundry}}</a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->tagihan_laundry}}</a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->tgl_pemesanan}}</a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->tgl_selesai}}</a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->id_pegawai}}</a></td>
+                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:#A38859;">{{ $order->status_laundry}}</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
             </div>
         @else
-        <p>Customer data in the database is empty</p>
+        <p>Laundry data in the database is empty</p>
         @endif
     </div>
 </div>

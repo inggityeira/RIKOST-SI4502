@@ -11,15 +11,24 @@ class laundry extends Model
 
     protected $table = 'laundry';
 
+    protected $primaryKey = 'id_laundry';
+
     protected $fillable = [
         'jenis_laundry', 'id_penyewa', 'berat_laundry', 'tagihan_laundry', 'tgl_pemesanan', 'tgl_selesai', 'status_laundry', 'id_pegawai'
     ];
 
     public function pegawai(){
-        return $this->belongsTo(pegawai::class);
+        return $this->belongsToOne(pegawai::class);
     }
 
     public function penyewa(){
-        return $this->belongsTo(penyewa::class);
+        return $this->belongsToOne(penyewa::class);
+    }
+
+    public static function getLaundryResults($jenis_laundry, $status_laundry)
+    {
+        return self::where('jenis_laundry', $jenis_laundry)
+            ->where('status_laundry', $status_laundry)
+            ->get();
     }
 }
