@@ -50,6 +50,10 @@ class PembayaranController extends Controller
             'status_pembayaran' => $request->status_pembayaran,
         ]);
         return redirect('/pembayaran')->with('success','Pembayaran berhasil diubah');
-}
-
+    }
+        
+    public function destroy($id_pembayaran){
+        $pembayaran = Pembayaran::where('id_pembayaran',$id_pembayaran)->delete();
+        return redirect('/pembayaran')->with('success','Pembayaran berhasil dihapus');;
+    }
 }
