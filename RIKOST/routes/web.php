@@ -95,7 +95,6 @@ Route::get('/pegawai', [pegawaiController::class, 'lihatTabel'])->middleware('is
 Route::get('/input_pegawai', [halamanController::class, 'input_Pegawai']);
 Route::get('/input-data-pegawai', [pegawaiController::class, 'store'])->name('input-data-pegawai');
 Route::get('/editPegawai/{id_pegawai}',[pegawaiController::class,'editform'] )->middleware('isLoggedIn')->name('editPegawai');
-Route::get('/editPegawai/{id_pegawai}', [pegawaiController::class, 'editForm'])->name('editPegawai');
 Route::get('/updatePegawai/{id_pegawai}',[pegawaiController::class, 'updatePegawai'])->name('updatePegawai');
 Route::get('/delete-pegawai/{id_pegawai}', [pegawaiController::class, 'delete'])->name('delete-pegawai');
 

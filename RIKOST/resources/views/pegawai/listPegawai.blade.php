@@ -11,20 +11,20 @@
 
 
 <div class="container mt-5">
-  <h2>Tabel Pegawai</h2>
+  <h2> PEGAWAI RIKOST</h2>
   <div class="d-flex justify-content-end">
-    <a class="btn btn-primary"href="/input_pegawai">Tambah</a>
+    <a class="btn btn-primary"href="/input_pegawai">+Tambah</a>
   </div>
   <br>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>id</th>
+        <th>id Pegawai</th>
         <th>Nama Pegawai</th>
         <th>Jabatan Pegawai</th>
         <th>Kontak Pegawai</th>
         <th>Alamat Pegawai</th>
-        <th>Norek Pegawai</th>
+        <th>Nomor Rekening</th>
         <th>Status Pegawai</th>
         <th>Aksi</th>
       </tr>
@@ -51,25 +51,5 @@
   </table>
 </div>
 
-<!-- Modal Tambah Pegawai -->
-<div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="tambahModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="tambahModalLabel">Tambah Pegawai</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Form tambah pegawai ditampilkan di sini -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary" id="btnSimpan">Simpan</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 @endsection
