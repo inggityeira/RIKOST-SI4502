@@ -32,5 +32,24 @@ class PembayaranController extends Controller
         return redirect()->route('home.pembayaran')->with('success','pembayaran berhasil ditambahkan');
 
     }
+    public function edit($id_pembayaran){
+        $list = Pembayaran::where('id_pembayaran',$id_pembayaran)->firstOrFail();
+        return view('pembayaran.editPembayaran',[
+            'list' => $list
+        ]);
+    }
+
+    public function update(Request $request, $id_pembayaran){
+        $tanggalFormatBaru = Carbon::createFromFormat('Y-m-d', $request->tgl_pembayaran)->format('Y-m-d');    
+        $pembayaran = Pembayaran::where('id_pembayaran', $id_pembayaran)->update([
+            'tgl_pembayaran' => $tanggalFormatBaru,
+            'termin_pembayaran' => $request->termin_pembayaran,
+            'nominal_pembayaran' => $request->nominal_pembayaran,
+            'aspek_pembayaran' => $request->aspek_pembayaran,
+            'metode_pembayaran' => $request->metode_pembayaran,
+            'status_pembayaran' => $request->status_pembayaran,
+        ]);
+        return redirect('/pembayaran')->with('success','Pembayaran berhasil diubah');
 }
 
+}
