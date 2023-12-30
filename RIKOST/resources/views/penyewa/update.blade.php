@@ -9,53 +9,39 @@
         <div class="card-body">
             <h2>Update Data Penyewa</h2>
 
-                <div class="form-group">
-                    <label for="id_penyewa">Masukan Id</label>
-                    <input type="integer" name="id_penyewa" id="id_penyewa" class="form-control" value="{{ $id_penyewa->id_penyewa }}">
-                </div>
+        <form >
+            @csrf
 
-                <div class="form-group">
-                    <label for="nama_penyewa">Nama Penyewa</label>
-                    <input type="string" name="nama_penyewa" id="nama_penyewa" class="form-control" value="{{ $penyewa->nama_penyewa }}">
-                </div>
+        <label>Masukan Id</label></br>
+        <input type="integer" name="id_penyewa" id = "id_penyewa" value="{{ $customer->id_penyewa}}" class="form-control"></br>
 
-                <div class="form-group">
-                    <label for="kontak_penyewa">Kontak Penyewa</label>
-                    <input type="string" name="kontak_penyewa" id="kontak_penyewa" class="form-control" value="{{ $penyewa->kontak_penyewa }}">
-                </div>
+        <label>Nama Penyewa</label></br>
+        <input type="string" name="nama_penyewa" id = "nama_penyewa" value="{{ $customer->nama_penyewa}}" class="form-control"></br>
 
-                <div class="form-group">
-                    <label for="NIK_penyewa">NIK Penyewa</label>
-                    <input type="string" name="NIK_penyewa" id="NIK_penyewa" class="form-control" value="{{ $penyewa->NIK_penyewa }}">
-                </div>
+        <label>Kontak Penyewa</label></br>
+        <input type="string" name="kontak_penyewa" id = "kontak_penyewa" value="{{ $customer->kontak_penyewa}}" class="form-control"></br>
 
-                <div class="form-group">
-                    <label for="nama_ortu">Nama Orang Tua</label>
-                    <input type="string" name="nama_ortu" id="nama_ortu" class="form-control" value="{{ $penyewa->nama_ortu }}">
-                </div>
+        <label>NIK Penyewa</label></br>
+        <input type="string" name="NIK_penyewa" id = "NIK_penyewa" value="{{ $customer->NIK_penyewa}}" class="form-control"></br>
+        
+        <label>Nama Orang Tua</label></br>
+        <input type="string" name="nama_ortu" id = "nama_ortu" value="{{ $customer->nama_ortu}}" class="form-control"></br>
+        
+        <label>Kontak Orang Tua</label></br>
+        <input type="string" name="kontak_ortu" id = "kontak_ortu" value="{{ $customer->kontak_ortu}}" class="form-control"></br>
 
-                <div class="form-group">
-                    <label for="kontak_ortu">Kontak Orang Tua</label>
-                    <input type="string" name="kontak_ortu" id="kontak_ortu" class="form-control" value="{{ $penyewa->kontak_ortu }}">
-                </div>
+        <label>Waktu Sewa</label></br>
+        <input type="string" name="waktu_sewa" id = "waktu_sewa" value="{{ $customer->waktu_sewa}}" class="form-control"></br>
 
-                <div class="form-group">
-                    <label for="waktu_sewa">Waktu Sewa</label>
-                    <input type="string" name="waktu_sewa" id="waktu_sewa" class="form-control" value="{{ $penyewa->waktu_sewa }}">
-                </div>
-
-                <div class="form-group">
-                    <label for="id_kamar">ID Kamar</label>
-                    <input type="text" name="id_kamar" id="id_kamar" class="form-control" value="{{ $penyewa->id_kamar }}">
-                </div>
-
-                <div class="form-group">
-                    <label for="fasilitas_umum">Fasilitas Umum</label>
-                    <input type="string" name="fasilitas_umum" id="fasilitas_umum" class="form-control" value="{{ $penyewa->fasilitas_umum }}">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Update</button>
-            </form>
+        <label>ID Kamar</label></br>
+        <input type="string" name="id_kamar" id = "id_kamar" value="{{ $customer->id_kamar}}" class="form-control"></br>
+        
+        <label>Fasilitas Umum</label></br>
+        <input type="string" name="fasilitas_umum" id = "fasilitas_umum" value="{{ $customer->fasilitas_umum}}" class="form-control"></br>
+        
+        <!-- <input type="submit" value= "Submit" class="btn" style = "background-color: #A38859 ; color : #FFFFFF "></br> -->
+        <button type="submit" class="btn" style="background-color:#A38859; margin-right:55px; color:white; font-weight: 600;">Submit</button>
+        </form>
         </div>
     </div>
 @endsection

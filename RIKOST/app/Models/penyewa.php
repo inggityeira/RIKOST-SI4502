@@ -11,6 +11,8 @@ class penyewa extends Model
 
     protected $table = "penyewa";
 
+    protected $primaryKey = 'id_penyewa';
+
     protected $fillable = [
         'nama_penyewa', 'kontak_penyewa', 'NIK_penyewa', 'nama_ortu', 'kontak_ortu', 'waktu_sewa', 'id_kamar', 'fasilitas_umum'
     ];
