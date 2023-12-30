@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Penyewa')
+@section('title', 'RIKOST | PENYEWA')
+
+@push('css')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 @section('content')
 <div class="container mt-4">
@@ -15,31 +19,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>123</td>
-                <td>John Doe</td>
-                <td>A101</td>
-                <td>
-                    <!-- Button Detail -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailModal">
-                        Detail
-                    </button>
-                    <!-- Button Create -->
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createModal">
-                        Create
-                    </button>
-                    <!-- Button Delete -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                        Delete
-                    </button>
-                </td>
-            </tr>
-            <!-- Add more rows as needed -->
+        @foreach ($penyewa as $customer)
+        <tr>
+            <td>{{ $customer->id_penyewa }}</td>
+            <td>{{ $customer->nama_penyewa }}</td>
+            <td>{{ $customer->id_kamar }}</td>
+            <td>
+                  <a href="{{ route('penyewa.update', $customer->id_penyewa) }}">
+                    <svg viewBox="0 0 512 512" version="1.1" width="28" heigth="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>details</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Combined-Shape" fill="#1fbd0a" transform="translate(64.000000, 64.000000)"> <path d="M384,64 L384,384 L64,384 L64,64 L384,64 Z M341.333333,106.666667 L106.666667,106.666667 L106.666667,341.333333 L341.333333,341.333333 L341.333333,106.666667 Z M320,1.42108547e-14 L320,42.6666667 L42.666,42.666 L42.6666667,320 L1.42108547e-14,320 L1.42108547e-14,1.42108547e-14 L320,1.42108547e-14 Z M298.666667,234.666667 L298.666667,277.333333 L149.333333,277.333333 L149.333333,234.666667 L298.666667,234.666667 Z M298.666667,149.333333 L298.666667,192 L149.333333,192 L149.333333,149.333333 L298.666667,149.333333 Z"> </path> </g> </g> </g></svg>
+                  </a>
+            </td>  
+        </tr>
+        @endforeach
         </tbody>
     </table>
 </div>
 
-<!-- Detail Modal -->
 <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

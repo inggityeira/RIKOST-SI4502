@@ -36,7 +36,8 @@
         <label>Fasilitas Umum</label></br>
         <input type="string" name="fasilitas_umum" id = "fasilitas_umum" class="form-control"></br>
         
-        <input type="submit" value= "Submit" class="btn" style = "background-color: #A38859 ; color : #FFFFFF "></br>
+        <!-- <input type="submit" value= "Submit" class="btn" style = "background-color: #A38859 ; color : #FFFFFF "></br> -->
+        <button type="submit" class="btn" style="background-color:#A38859; margin-right:55px; color:white; font-weight: 600;">Submit</button>
         </form>
     </div>  
 </div>

@@ -4,7 +4,6 @@
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @section('content')
-<!-- masukin isi content disini -->
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Suite Class</a>

@@ -33,6 +33,27 @@ class penyewaController extends Controller
     public function index(){
         $penyewa = penyewa::all();
 
-        return view('penyewa.penyewa', compact('penyewa'));
+        return view('penyewa.listPenyewa', compact('penyewa'));
     }
+
+    public function viewupdate($id_penyewa){
+        $penyewa = penyewa::all();
+        $customer = penyewa::findOrFail($id_penyewa);
+        return view('penyewa.update', compact('customer', 'penyewa'));
+    }
+
+//     public function update(Request $request)
+// {
+//     $penyewa = penyewa::create([
+//         'id_penyewa' => $request->id_penyewa,
+//         'nama_penyewa' => $request->nama_penyewa,
+//         'kontak_penyewa' => $request->kontak_penyewa,
+//         'NIK_penyewa' => $request->NIK_penyewa,
+//         'nama_ortu' => $request->nama_ortu,
+//         'kontak_ortu' => $request->kontak_ortu,
+//         'waktu_sewa' => $request->waktu_sewa,
+//         'id_kamar' => $request->id_kamar,
+//         'fasilitas_umum' => $request->fasilitas_umum,
+//     ]);
+// }
 }
