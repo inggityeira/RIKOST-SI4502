@@ -87,6 +87,7 @@ Route::post('/pembayaran/create', [PembayaranController::class, 'store'])->middl
 Route::get('/pembayaran/edit/{id_pembayaran}', [PembayaranController::class, 'edit'])->middleware('isLoggedIn');
 Route::put('/pembayaran/update/{id_pembayaran}', [PembayaranController::class, 'update'])->middleware('isLoggedIn')->name('update.pembayaran');
 Route::get('/pembayaran/destroy/{id_pembayaran}', [PembayaranController::class, 'destroy'])->middleware('isLoggedIn');
+Route::get('/pembayaran/detail/{id_pembayaran}', [PembayaranController::class, 'detail'])->middleware('isLoggedIn');
 
 // nadya
 Route::get('/pegawai', [pegawaiController::class, 'lihatTabel'])->middleware('isLoggedIn');
