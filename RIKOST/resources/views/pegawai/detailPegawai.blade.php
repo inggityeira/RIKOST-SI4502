@@ -14,35 +14,36 @@
     <div class="card">
         <div class="card-body">            
             <h1 class="d-flex justify-content-center">Input Pegawai</h1>
-            <form>
+            <form action="{{ route('updatePegawai', $pegawai->id_pegawai )}}" method="post">
+              @csrf
+              <!-- @method('put') -->
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama Pegawai</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" disable>
+                <input type="text" class="form-control" id="nama" aria-describedby="nama" value="{{$pegawai->nama_pegawai}}">
               </div>
               <div class="mb-3">
                 <label for="jabatan" class="form-label">Jabatan Pegawai</label>
-                <input type="text" class="form-control" id="jabatan" aria-describedby="jabatan" disable>
+                <input type="text" class="form-control" id="jabatan" aria-describedby="jabatan" value="{{$pegawai->jabatan_pegawai}}">
               </div>
               <div class="mb-3">
                 <label for="kontak" class="form-label">Kontak Pegawai</label>
-                <input type="text" class="form-control" id="kontak" aria-describedby="kontak" disable>
+                <input type="text" class="form-control" id="kontak" aria-describedby="kontak" value="{{$pegawai->kontak_pegawai}}">
               </div>
               <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat Pegawai</label>
-                <input type="text" class="form-control" id="alamat" aria-describedby="alamat" disable>
+                <input type="text" class="form-control" id="alamat" aria-describedby="alamat" value="{{$pegawai->alamat_pegawai}}">
               </div>
               <div class="mb-3">
                 <label for="noRek" class="form-label">Nomor Rekening Pegawai</label>
-                <input type="text" class="form-control" id="noRek" aria-describedby="noRek" disable>
+                <input type="text" class="form-control" id="noRek" aria-describedby="noRek" value="{{$pegawai->norek_pegawai}}">
               </div>
               <div class="mb-3">
                 <label for="status" class="form-label">Status Pegawai</label>
-                <input type="text" class="form-control" id="status" aria-describedby="status" disable>
+                <input type="text" class="form-control" id="status" aria-describedby="status" value="{{$pegawai->status_pegawai}}">
               </div>
              
               <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="delete" class="btn btn-primary">Delete</button>
-              <a type="submit" class="btn btn-primary">Submit</button>
+              
             </form>
         </div>
     </div>

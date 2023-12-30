@@ -9,8 +9,7 @@ class pegawaiController extends Controller
 {
     public function index()
     {
-        $pegawai = pegawai::all();
-        return view('pegawai.listPegawai', compact('pegawai'));
+      
     }
 
     public function store (Request $request)
@@ -26,9 +25,10 @@ class pegawaiController extends Controller
         ]);
         return redirect('/pegawai');
     }
-    public function update (Request $request, $id_pegawai)
+    public function updatePegawai (Request $request, $id_pegawai)
     {
-        $pegawai = pegawai:: where ('id_pegawai', '=', $id_pegawai)-> update([
+        $pegawai = pegawai::findorfail ($id_pegawai);
+        $pegawai-> update([
             'id_pegawai' => $request-> id_pegawai,
             'nama_pegawai' => $request-> nama_pegawai,
             'jabatan_pegawai' => $request-> jabatan_pegawai,
@@ -37,11 +37,25 @@ class pegawaiController extends Controller
             'norek_pegawai' => $request-> norek_pegawai,
             'status_pegawai' => $request-> status_pegawai,
         ]);
-        return redirect ('/pegawai');
+        return redirect('/pegawai');
+        // return redirect ('/pegawai', compact('pegawai'))->with('pegawai', $pegawai);
     }
     public function input_Pegawai (){
         return view('pegawai/inputPegawai');
     }
+    public function lihatTabel(){
+        $pegawai = pegawai::all();
+        return view('pegawai.listPegawai', compact('pegawai'));
+    }
+
+    public function editForm($id_pegawai){
+        $pegawai = pegawai::findOrfail($id_pegawai);
+        return view('pegawai.detailpegawai', compact('$pegawai'));
+    }
+    // public function editForm($id){
+    //     $pegawaiEditForm=pegawai::where('id_pegawai', $id);
+    //     return view ('pegawai.detailpegawai', compact('pegawaiEditForm'));
+    // }
 }
 
 

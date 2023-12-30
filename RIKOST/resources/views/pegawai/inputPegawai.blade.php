@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-body">            
             <h1 class="d-flex justify-content-center">Input Pegawai</h1>
-            <form action="{{route('input-data-pegawai')}}" method="post" >
+            <form action="{{route('input-data-pegawai')}}" method="get" >
               @csrf
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama Pegawai</label>
@@ -20,7 +20,12 @@
               </div>
               <div class="mb-3">
                 <label for="jabatan" class="form-label">Jabatan Pegawai</label>
-                <input type="text" class="form-control" id="jabatan" aria-describedby="jabatan" name="jabatan_pegawai">
+                <select class="form-select"name= 'jabatan_pegawai' aria-label="Default select example">
+                  <option selected>Select Jabatan Pegawai</option>
+                  <option value="Laundry">Laundry</option>
+                  <option value="Laundry">Penjaga</option>
+                  <option value="Cleaning Service">Cleaning Service</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label for="kontak" class="form-label">Kontak Pegawai</label>
@@ -36,7 +41,11 @@
               </div>
               <div class="mb-3">
                 <label for="status" class="form-label">Status Pegawai</label>
-                <input type="text" class="form-control" id="status" aria-describedby="status" name="status_pegawai">
+                <select class="form-select"name= 'status_pegawai' aria-label="Default select example">
+                  <option selected>Select Status Pegawai</option>
+                  <option value="Bekerja">Bekerja</option>
+                  <option value="Tidak Bekerja">Tidak Bekerja</option>
+                </select>
               </div>
              
               <button type="submit" class="btn btn-primary">Submit</button>

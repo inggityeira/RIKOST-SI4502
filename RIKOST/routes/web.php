@@ -88,9 +88,11 @@ Route::put('/pembayaran/update/{id_pembayaran}', [PembayaranController::class, '
 Route::get('/pembayaran/destroy/{id_pembayaran}', [PembayaranController::class, 'destroy'])->middleware('isLoggedIn');
 
 // nadya
-Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');
+Route::get('/pegawai', [pegawaiController::class, 'lihatTabel'])->middleware('isLoggedIn');
 Route::get('/input_pegawai', [halamanController::class, 'input_Pegawai']);
 Route::post('/input-data-pegawai', [pegawaiController::class, 'store'])->name('input-data-pegawai');
+Route::get('/editPegawai/{id}', [pegawaiController::class, 'editForm'])->name('editPegawai');
+Route::get('/updatePegawai/{id_pegawai}',[pegawaiController::class, 'update'])->name('updatePegawai');
 
 // lanang
 Route::get('/tamu', [TamuController::class, 'index'])->middleware('isLoggedIn')->name('tamu');

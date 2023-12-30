@@ -19,7 +19,6 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>ID Pegawai</th>
         <th>Nama Pegawai</th>
         <th>Jabatan Pegawai</th>
         <th>Kontak Pegawai</th>
@@ -29,20 +28,23 @@
         <th>Aksi</th>
       </tr>
     </thead>
-    <thead>
-      <tr>
-        <td>001</td>
-        <td>Udin</td>
-        <th>Jabatan Pegawai</th>
-        <th>Kontak Pegawai</th>
-        <th>Alamat Pegawai</th>
-        <th>Norek Pegawai</th>
-        <th>Status Pegawai</th>
-        <td><a class="btn btn-warning" href="">Edit</a><a class="btn btn-danger" href="">Hapus</a></td>
-      </tr>
-    </thead>
+   
     <tbody>
       <!-- Data Pegawai ditampilkan di sini -->
+      @foreach ($pegawai as $p)
+      <tr>
+        <td>{{ $p->nama_pegawai}}</td>
+        <td>{{ $p->jabatan_pegawai}}</td>
+        <td>{{ $p->kontak_pegawai}}</td>
+        <td>{{ $p->alamat_pegawai}}</td>
+        <td>{{ $p->norek_pegawai}}</td>
+        <td>{{ $p->status_pegawai}}</td>
+        <td>
+          <a class="btn btn-warning" href="{{ route('editPegawai', $p->id_pegawai)}}">Edit</a>
+          <a class="btn btn-danger" href="">Hapus</a>
+        </td>
+      </tr>
+      @endforeach
     </tbody>
   </table>
 </div>
