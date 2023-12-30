@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', '..........')
+@section('title', 'RIKOST | PEGAWAI')
 <!-- di titik-titik masukin title contoh: RIKOST | Gedung-->
 
 @push('css')
@@ -13,7 +13,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body">            
-            <h1 class="d-flex justify-content-center">Input Pegawai</h1>
+            <h1 class="d-flex justify-content-center">EDIT DATA PEGAWAI</h1>
             <form action="{{ route('updatePegawai', $pegawai->id_pegawai )}}" method="get">
               @csrf
               <!-- @method('put') -->
@@ -49,7 +49,8 @@
                   <option value="Tidak Bekerja">Tidak Bekerja</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+              <a href="" class="btn btn-secondary">Batal</a>
               
             </form>
         </div>
