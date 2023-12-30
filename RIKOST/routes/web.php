@@ -67,10 +67,8 @@ Route::get('/kebersihan-admin-edit/{id}', [kebersihanController::class, 'edit'])
 Route::put('/kebersihan-admin-update/{id}', [kebersihanController::class, 'update'])->middleware('isLoggedIn')->name('kebersihan-admin.update');
 
 // nikita
-Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');
-Route::get('/pembayaran', [halamanController::class, 'pembayaran'])->middleware('isLoggedIn');
-Route::get('/pembayaran', [PembayaranController::class, 'index'])->middleware('isLoggedIn');
-Route::get('/pembayaran/store', [PembayaranController::class, 'store'])->middleware('isLoggedIn');
+Route::get('/pembayaran', [PembayaranController::class, 'index'])->middleware('isLoggedIn')->name('home.pembayaran');
+Route::post('/pembayaran/create', [PembayaranController::class, 'store'])->middleware('isLoggedIn')->name('store.pembayaran');
 Route::get('/pembayaran/edit/{id_pembayaran}', [PembayaranController::class, 'edit'])->middleware('isLoggedIn');
 Route::get('/pembayaran/update/{id_pembayaran}', [PembayaranController::class, 'update'])->middleware('isLoggedIn');
 Route::get('/pembayaran/destroy/{id_pembayaran}', [PembayaranController::class, 'destroy'])->middleware('isLoggedIn');
