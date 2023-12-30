@@ -9,7 +9,7 @@
         <div class="card-body">
             <h2>Update Data Penyewa</h2>
 
-        <form >
+        <form action ="{{route('penyewa.toupdate', $customer->id_penyewa)}}" method = "POST"> 
             @csrf
 
         <label>Masukan Id</label></br>

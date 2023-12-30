@@ -53,6 +53,8 @@ Route::post('/laundry-delete/{id_laundry}', [LaundryController::class, 'delete']
 Route::get('/penyewa', [penyewaController::class, 'index'])->middleware('isLoggedIn')->name('penyewa.penyewa');
 Route::get('/createpenyewa', [penyewaController::class, 'create'])->middleware('isLoggedIn')->name('penyewa.create');
 Route::get('/updatepenyewa/{id_penyewa}/edit', [penyewaController::class, 'viewupdate'])->middleware('isLoggedIn')->name('penyewa.update');
+
+Route::post('/updatedatapenyewa/{id_penyewa}', [penyewaController::class, 'update'])->name('penyewa.toupdate');
 // Route::get('/detaillaundry/{id_laundry}/edit', [LaundryController::class, 'detail'])->middleware('isLoggedIn')->name('laundry.detail');
 // Route::post('/penyewa/editpenyewa', [penyewaController::class, 'store'])->middleware('isLoggedIn')->name('store.penyewa');
 // Route::get('/listPenyewa', [penyewaController::class, 'index'])->middleware('isLoggedIn')->name('penyewa.list');
