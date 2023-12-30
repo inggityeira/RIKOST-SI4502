@@ -1,11 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'RIKOST | Cabang')
-<!-- di titik-titik masukin title -->
-
-@push('css')
-    <!-- masukin <link> yang nyambungin ke file css -->
-@endpush
+@section('title', 'RIKOST | Penyewa')
 
 @section('content')
 <div class="container mt-4">

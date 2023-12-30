@@ -4,19 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\penyewa;
-use App\Models\laundry;
 use App\Models\kamar;
 
 class penyewaController extends Controller
 {
-    public function penyewa(){
+    public function create(){
         $kamar = kamar::all();
-        $laundry = laundry::all();
-        return view('penyewa.penyewa', compact('kamar', 'laundry'));
+        return view('penyewa.create', compact('kamar'));
     }
 
-    public function store(Request $request){
-        $penyewa = new listPenyewa();
+    public function submit(Request $request){
+        $penyewa = new penyewa();
         $penyewa->id_penyewa = $request->id_penyewa;
         $penyewa->nama_penyewa = $request->nama_penyewa;
         $penyewa->kontak_penyewa = $request->kontak_penyewa;
@@ -33,8 +31,8 @@ class penyewaController extends Controller
     }
 
     public function index(){
-        $penyewa = listPenyewa::all();
+        $penyewa = penyewa::all();
 
-        return view('penyewa.listPenyewa', compact('penyewa'));
+        return view('penyewa.penyewa', compact('penyewa'));
     }
 }
