@@ -54,7 +54,7 @@ Route::get('/createpenyewa', [halamanController::class, 'createpenyewa'])->middl
 Route::get('/updatepenyewa', [halamanController::class, 'updatepenyewa'])->middleware('isLoggedIn');
 
 // rico
-Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');
+Route::get('/kamar', [KamarController::class, 'index'])->middleware('isLoggedIn')->name('kamar');
 
 // firas
 Route::get('/kebersihan', [checkoutKebersihanController::class, 'index'])->middleware('isLoggedIn');
