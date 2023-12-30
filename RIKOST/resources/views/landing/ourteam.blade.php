@@ -15,7 +15,7 @@
       <h2><strong>RIKOST</strong></h2>
       <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav me-5 ms-auto" style="font-size: 18px;">
-          <a class="nav-link active me-4" href="/ourteam" aria-current="page">Welcome</a>
+          <a class="nav-link active me-4" href="/" aria-current="page">Welcome</a>
           <a class="nav-link active me-4" style="color:#A38859;" aria-current="page" href="/">Login</a>
           <a class="btn" style="background-color:#A38859; color:white; font-weight: 600; " aria-current="page" href="/signup">Sign Up</a>
         </div>
