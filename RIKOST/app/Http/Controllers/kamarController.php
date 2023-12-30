@@ -29,11 +29,11 @@ class KamarController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'lantai_kamar' => 'required',
-            'jenis_kamar' => 'required',
-            'fasilitas_kamar' => 'required',
-            'harga_kamar' => 'required',
-            'foto_kamar' => 'required|image|mimes:jpeg,png,jpg,svg|max:500000',
+            'lantai_kamar'      => 'required',
+            'jenis_kamar'       => 'required',
+            'fasilitas_kamar'   => 'required',
+            'harga_kamar'       => 'required',
+            'foto_kamar'        => 'required|image|mimes:jpeg,png,jpg,svg|max:500000',
         ]);
 
         if ($validator->fails()) {
@@ -52,12 +52,12 @@ class KamarController extends Controller
 
         try {
             $layout = new Kamar();
-            $layout->lantai_kamar = $request->lantai_kamar;
-            $layout->jenis_kamar = $request->jenis_kamar;
+            $layout->lantai_kamar    = $request->lantai_kamar;
+            $layout->jenis_kamar     = $request->jenis_kamar;
             $layout->fasilitas_kamar = $request->fasilitas_kamar;
-            $layout->harga_kamar = $request->harga_kamar;
-            $layout->foto_kamar = $name;
-            $layout->status_kamar = 'Tersedia';
+            $layout->harga_kamar     = $request->harga_kamar;
+            $layout->foto_kamar      = $name;
+            $layout->status_kamar    = 'Tersedia';
             if ($layout->save()) {
                 $file->move($path, $name);
             }
@@ -93,12 +93,12 @@ class KamarController extends Controller
     public function update(Request $request, $id): RedirectResponse
     {
         $this->validate($request, [
-            'lantai_kamar' => 'required',
-            'jenis_kamar' => 'required',
-            'fasilitas_kamar' => 'required',
-            'harga_kamar' => 'required',
-            'status_kamar' => 'required',
-            'foto_kamar' => 'image',
+            'lantai_kamar'      => 'required',
+            'jenis_kamar'       => 'required',
+            'fasilitas_kamar'   => 'required',
+            'harga_kamar'       => 'required',
+            'status_kamar'      => 'required',
+            'foto_kamar'        => 'image',
         ]);
 
         if ($request->hasFile('foto_kamar')) {
@@ -114,22 +114,22 @@ class KamarController extends Controller
 
             Kamar::where('id_kamar', $id)
                 ->update([
-                    'lantai_kamar' => $request->lantai_kamar,
-                    'jenis_kamar' => $request->jenis_kamar,
-                    'fasilitas_kamar' => $request->fasilitas_kamar,
-                    'harga_kamar' => $request->harga_kamar,
-                    'status_kamar' => $request->status_kamar,
-                    'foto_kamar' => $name,
+                    'lantai_kamar'      => $request->lantai_kamar,
+                    'jenis_kamar'       => $request->jenis_kamar,
+                    'fasilitas_kamar'   => $request->fasilitas_kamar,
+                    'harga_kamar'       => $request->harga_kamar,
+                    'status_kamar'      => $request->status_kamar,
+                    'foto_kamar'        => $name,
                 ]);
         } else {
 
             Kamar::where('id_kamar', $id)
                 ->update([
-                    'lantai_kamar' => $request->lantai_kamar,
-                    'jenis_kamar' => $request->jenis_kamar,
-                    'fasilitas_kamar' => $request->fasilitas_kamar,
-                    'harga_kamar' => $request->harga_kamar,
-                    'status_kamar' => $request->status_kamar,
+                    'lantai_kamar'      => $request->lantai_kamar,
+                    'jenis_kamar'       => $request->jenis_kamar,
+                    'fasilitas_kamar'   => $request->fasilitas_kamar,
+                    'harga_kamar'       => $request->harga_kamar,
+                    'status_kamar'      => $request->status_kamar,
                 ]);
         }
 

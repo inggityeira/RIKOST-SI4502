@@ -8,7 +8,7 @@ use App\Http\Controllers\laundryController;
 use App\Http\Controllers\kebersihanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\penyewaController;
-
+use App\Http\Controllers\kamarController;
 use App\Http\Controllers\pegawaiController;
 use App\Http\Controllers\checkoutKebersihanController;
 
@@ -58,6 +58,12 @@ Route::post('/penyewa-create', [penyewaController::class, 'submit'])->name('peny
 
 // rico
 Route::get('/kamar', [KamarController::class, 'index'])->middleware('isLoggedIn')->name('kamar');
+Route::get('/kamar-admin-create', [KamarController::class, 'create'])->middleware('isLoggedIn')->name('kamar.create');
+Route::post('/kamar-admin-store', [KamarController::class, 'store'])->middleware('isLoggedIn')->name('kamar.add');
+Route::delete('/kamar-admin-delete/{id_kamar}', [KamarController::class, 'destroy'])->name('kamar.destroy');
+Route::get('/kamar-admin-edit/{id_kamar}', [KamarController::class, 'edit'])->middleware('isLoggedIn')->name('kamar.edit');
+Route::get('/kamar-admin-view/{id_kamar}', [KamarController::class, 'view'])->middleware('isLoggedIn')->name('kamar.view');
+Route::post('/kamar-admin-update/{id_kamar}', [KamarController::class, 'update'])->middleware('isLoggedIn')->name('kamar.update');
 
 // firas
 Route::get('/kebersihan', [checkoutKebersihanController::class, 'index'])->middleware('isLoggedIn');
