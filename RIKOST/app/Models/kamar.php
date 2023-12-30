@@ -19,4 +19,9 @@ class kamar extends Model
     {
         return $this->belongsTo(kamar::class);
     }
+
+    public function penyewa()
+    {
+        return $this->hasOne(penyewa::class);
+    }
 }

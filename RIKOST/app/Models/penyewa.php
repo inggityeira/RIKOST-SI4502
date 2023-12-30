@@ -20,6 +20,11 @@ class penyewa extends Model
         return $this->hasMany(laundry::class);
     }
 
+    public function kamar()
+    {
+        return $this->belongsToOne(kamar::class);
+    }
+
     public function tamu()
     {
         return $this->hasMany(tamu::class);

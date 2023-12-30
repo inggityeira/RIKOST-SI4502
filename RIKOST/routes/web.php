@@ -7,6 +7,7 @@ use App\Http\Controllers\halamanController;
 use App\Http\Controllers\laundryController;
 use App\Http\Controllers\kebersihanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\penyewaController;
 
 use App\Http\Controllers\pegawaiController;
 use App\Http\Controllers\checkoutKebersihanController;
@@ -50,8 +51,10 @@ Route::post('/laundry-delete/{id_laundry}', [LaundryController::class, 'delete']
 
 // laura
 Route::get('/penyewa', [halamanController::class, 'penyewa'])->middleware('isLoggedIn');
-Route::get('/createpenyewa', [halamanController::class, 'createpenyewa'])->middleware('isLoggedIn');
+Route::get('/createpenyewa', [penyewaController::class, 'create'])->middleware('isLoggedIn')->name('penyewa.create');
 Route::get('/updatepenyewa', [halamanController::class, 'updatepenyewa'])->middleware('isLoggedIn');
+
+Route::post('/penyewa-create', [penyewaController::class, 'submit'])->name('penyewa.submit');
 
 // rico
 Route::get('/kamar', [halamanController::class, 'kamar'])->middleware('isLoggedIn');

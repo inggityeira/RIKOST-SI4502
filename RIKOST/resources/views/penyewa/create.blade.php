@@ -6,7 +6,9 @@
 <div class = "card" style = "margin : 20px;">
     <div class = "card-header" style = "background-color: #A38859 ; color : #FFFFFF">Penyewa Baru</div>
     <div class = "card-body">
-        <form>
+        <form action="{{route('penyewa.submit')}}" method='POST'>
+            @csrf
+
         <label>Masukan Id</label></br>
         <input type="integer" name="id_penyewa" id = "id_penyewa" class="form-control"></br>
 
