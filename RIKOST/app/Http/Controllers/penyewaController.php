@@ -42,18 +42,21 @@ class penyewaController extends Controller
         return view('penyewa.update', compact('customer', 'penyewa'));
     }
 
-//     public function update(Request $request)
-// {
-//     $penyewa = penyewa::create([
-//         'id_penyewa' => $request->id_penyewa,
-//         'nama_penyewa' => $request->nama_penyewa,
-//         'kontak_penyewa' => $request->kontak_penyewa,
-//         'NIK_penyewa' => $request->NIK_penyewa,
-//         'nama_ortu' => $request->nama_ortu,
-//         'kontak_ortu' => $request->kontak_ortu,
-//         'waktu_sewa' => $request->waktu_sewa,
-//         'id_kamar' => $request->id_kamar,
-//         'fasilitas_umum' => $request->fasilitas_umum,
-//     ]);
-// }
+    public function update(Request $request, $id_penyewa)
+    {
+        $customer = penyewa::findOrFail($id_penyewa);
+        $customer->update([
+            'id_penyewa' => $request->id_penyewa,
+            'nama_penyewa' => $request->nama_penyewa,
+            'kontak_penyewa' => $request->kontak_penyewa,
+            'NIK_penyewa' => $request->NIK_penyewa,
+            'nama_ortu' => $request->nama_ortu,
+            'kontak_ortu' => $request->kontak_ortu,
+            'waktu_sewa' => $request->waktu_sewa,
+            'id_kamar' => $request->id_kamar,
+            'fasilitas_umum' => $request->fasilitas_umum,
+        ]);
+
+        return redirect()->route('penyewa.penyewa')->with('success', 'Order updated successfully');
+    }
 }
