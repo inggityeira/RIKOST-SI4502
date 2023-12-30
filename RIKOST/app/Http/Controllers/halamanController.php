@@ -15,6 +15,10 @@ class halamanController extends Controller
         return view('landing.landing');
     }
 
+    public function ourteam()
+    {
+        return view('landing.ourteam');
+    }
     public function penyewa()
     {
         return view('penyewa.listPenyewa');
