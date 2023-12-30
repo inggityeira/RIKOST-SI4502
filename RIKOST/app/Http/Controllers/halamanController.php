@@ -10,6 +10,11 @@ use App\Models\laundry;
 class halamanController extends Controller
 {
 
+    public function landing()
+    {
+        return view('landing.landing');
+    }
+
     public function penyewa()
     {
         return view('penyewa.listPenyewa');
