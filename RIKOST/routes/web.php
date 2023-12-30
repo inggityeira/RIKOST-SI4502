@@ -78,6 +78,8 @@ Route::put('/kebersihan-admin-update/{id}', [kebersihanController::class, 'updat
 // nikita
 Route::get('/pembayaran', [PembayaranController::class, 'index'])->middleware('isLoggedIn')->name('home.pembayaran');
 Route::post('/pembayaran/create', [PembayaranController::class, 'store'])->middleware('isLoggedIn')->name('store.pembayaran');
+Route::get('/pembayaran/edit/{id_pembayaran}', [PembayaranController::class, 'edit'])->middleware('isLoggedIn');
+Route::put('/pembayaran/update/{id_pembayaran}', [PembayaranController::class, 'update'])->middleware('isLoggedIn')->name('update.pembayaran');
 
 // nadya
 Route::get('/pegawai', [halamanController::class, 'pegawai'])->middleware('isLoggedIn');
