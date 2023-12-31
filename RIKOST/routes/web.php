@@ -28,16 +28,13 @@ use App\Http\Controllers\checkoutKebersihanController;
 
 Route::get('/login', [AuthManager::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('/signup', [AuthManager::class, 'signup'])->middleware('alreadyLoggedIn');
+Route::get('/ourteam', [halamanController::class, 'ourteam'])->middleware('alreadyLoggedIn');
 Route::post('/signup-user', [AuthManager::class, 'signupUser'])->name('signup-user');
 Route::post('/login-user', [AuthManager::class, 'loginUser'])->name('login-user');
 Route::get('/home', [AuthManager::class, 'home'])->middleware('isLoggedIn');
 Route::get('/logout', [AuthManager::class, 'logout']);
 Route::get('/', [halamanController::class, 'landing'])->middleware('alreadyLoggedIn');
-Route::get('/ourteam', [halamanController::class, 'ourteam'])->middleware('alreadyLoggedIn');
 
-// Route::get('/ourteam', function () {
-//     return view('landing.ourteam');
-// });
 // inggit
 Route::get('/laundry', [LaundryController::class, 'informasi'])->middleware('isLoggedIn')->name('laundry.list');
 Route::get('/newlaundry', [LaundryController::class, 'newlaundry'])->middleware('isLoggedIn')->name('laundry.new');

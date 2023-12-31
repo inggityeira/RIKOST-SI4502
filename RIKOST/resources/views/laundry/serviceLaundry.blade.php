@@ -22,7 +22,7 @@
         </nav>
     </div>
 
-    <div class="d-flex align-items-center py-5 position-absolute start-50 translate-middle-x" style="width:1200px;">
+    <div class="d-flex align-items-center py-5" style="margin-left:10%; width:1200px;">
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">

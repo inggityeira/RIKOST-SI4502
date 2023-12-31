@@ -145,7 +145,7 @@
                 </div>
                 <div class="col-sm-8 card-body">
                     <h4 style="font-size:40px; margin-right:30px;"><strong>Hard time deciding<br>what’s room best for you?</strong></h4>
-                    <a href="" class="btn" style="margin-left:350px; margin-top:80px; background-color:white; color:black; font-size: 20px; border-radius: 150px;"><strong>Learn more</strong></a>
+                    <a href="/kamar" class="btn" style="margin-left:350px; margin-top:80px; background-color:white; color:black; font-size: 20px; border-radius: 150px;"><strong>Learn more</strong></a>
                 </div>
             </div>
         </div>

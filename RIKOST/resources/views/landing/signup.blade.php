@@ -91,7 +91,7 @@
                         </div>
 
                         <div>
-                          <p style="color: #7C838A; font-size: 15px; font-weight: 400; text-align: center;">Already have an account? <a href="/" class="primary-text fw-medium">Login</a></p>
+                          <p style="color: #7C838A; font-size: 15px; font-weight: 400; text-align: center;">Already have an account? <a href="/login" class="primary-text fw-medium">Login</a></p>
                         </div>
 
                         </div>
