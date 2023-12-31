@@ -99,7 +99,7 @@
                 @else
                 <h2 style="color:black; font-size:25px; margin-left:40px; margin-top:40px;">!Laundry data in the database is empty!</h2>
                 @endif
-                <a href="{{route('laundry.list')}}" class="btn" style="background-color:#A38859; margin-left:860px; margin-bottom:30px; color:white; font-weight: 600;">See table</a>
+                <a href="{{route('laundry.list')}}" class="btn" style="background-color:#A38859; margin-left:810px; margin-bottom:30px; color:white; font-weight: 600;">See table</a>
 
             </div>
         </div>
