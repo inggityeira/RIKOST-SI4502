@@ -13,7 +13,18 @@ class PembayaranController extends Controller
         $list = Pembayaran::with('penyewa')->get();
         return view('pembayaran.listPembayaran', compact('list'));
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $request->validate([
+            'id_penyewa'=>'required',
+            'tgl_pembayaran'=>'required|not_in:0',
+            'termin_pembayaran'=>'required|not_in:0',
+            'nominal_pembayaran'=>'required|not_in:0',
+            'aspek_pembayaran'=>'required',
+            'metode_pembayaran'=>'required',
+            'status_pembayaran'=>'required'
+        ]);
+
         $tanggalFormatBaru = Carbon::createFromFormat('Y-m-d', $request->tgl_pembayaran)->format('Y-m-d');
         // dd($tanggalFormatBaru);
         $pembayaran =  Pembayaran::create([
