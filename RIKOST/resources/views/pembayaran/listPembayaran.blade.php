@@ -94,6 +94,7 @@
           <div class="mb-3">
             <label for="termin_pembayaran" class="form-label">Termin Pembayaran</label>
             <select name="termin_pembayaran" id="termin_pembayaran" class="form-select">
+              <option value="Select the preferred payment terms">Select the preferred payment terms</option>
               <option value="Satu">1</option>
               <option value="Dua">2</option>
               <!-- Tambahkan opsi lain sesuai kebutuhan Anda -->
@@ -110,6 +111,7 @@
           <div class="mb-3">
             <label for="aspek_pembayaran" class="form-label">Aspek Pembayaran</label>
             <select name="aspek_pembayaran" id="aspek_pembayaran" class="form-select">
+              <option value="Choose the payment aspect you will pay">Choose the payment aspect you will pay</option>
               <option value="Kosan Tipe Kamar Suite">Kosan Tipe Kamar Suite</option>
               <option value="Kosan Tipe Kamar Medium">Kosan Tipe Kamar Medium</option>
               <option value="Kosan Tipe Kamar Reguler">Kosan Tipe Kamar Reguler</option>
@@ -129,6 +131,7 @@
           <div class="mb-3">
             <label for="status_pembayaran" class="form-label">Status Pembayaran</label>
             <select name="status_pembayaran" id="status_pembayaran" class="form-select">
+              <option value="Select the status">Select the status</option>
               <option value="Belum Lunas">Belum Lunas</option>
               <option value="Lunas">Lunas</option>
               <option value="Dibatalkan">Dibatalkan</option>
