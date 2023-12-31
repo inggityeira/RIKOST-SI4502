@@ -13,20 +13,26 @@ class PembayaranController extends Controller
         $list = Pembayaran::with('penyewa')->get();
         return view('pembayaran.listPembayaran', compact('list'));
     }
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+
         $request->validate([
-            'id_penyewa'=>'required',
-            'tgl_pembayaran'=>'required|not_in:0',
-            'termin_pembayaran'=>'required|not_in:0',
-            'nominal_pembayaran'=>'required|not_in:0',
-            'aspek_pembayaran'=>'required',
-            'metode_pembayaran'=>'required',
-            'status_pembayaran'=>'required'
+            'id_penyewa' => 'required|string',
+            'tgl_pembayaran' => 'required|date',
+            'termin_pembayaran' => 'required|in:Select the preferred payment terms,Satu,Dua',
+            'nominal_pembayaran' => 'required|numeric',
+            'aspek_pembayaran' => 'required|in:Choose the payment aspect you will pay,Kosan Tipe Kamar Suite, Kosan Tipe Kamar Medium, Kosan Tipe Kamar Reguler, Laundry, Kebersihan',
+            'metode_pembayaran' => 'required|string',
+            'status_pembayaran' => 'required|in:Select the status, Belum Lunas, Lunas, Dibatalkan',
+        ], [
+            'required' => 'Column :attribute must be filled in.',
+            'date' => 'Column :attribute must be in date format.',
+            'in' => 'Column :attribute must select one of the available options.',
+            'numeric' => 'Column :attribute must be a numeric.',
+            'string' => 'Column :attribute must be a text.'
+
         ]);
 
         $tanggalFormatBaru = Carbon::createFromFormat('Y-m-d', $request->tgl_pembayaran)->format('Y-m-d');
-        // dd($tanggalFormatBaru);
         $pembayaran =  Pembayaran::create([
             'id_penyewa' => $request->id_penyewa,
             'tgl_pembayaran' => $tanggalFormatBaru,
@@ -36,13 +42,11 @@ class PembayaranController extends Controller
             'metode_pembayaran' => $request->metode_pembayaran,
             'status_pembayaran' => $request->status_pembayaran,
         ]);
-        // return redirect('/pembayaran');
 
-        // $pembayaran = Pembayaran::create($request->all());
 
-        return redirect()->route('home.pembayaran')->with('success','pembayaran berhasil ditambahkan');
+        return redirect()->route('home.pembayaran')->with('success','Pembayaran berhasil ditambahkan');
 
-    }
+}
     public function edit($id_pembayaran){
         $list = Pembayaran::where('id_pembayaran',$id_pembayaran)->firstOrFail();
         return view('pembayaran.editPembayaran',[
@@ -51,6 +55,21 @@ class PembayaranController extends Controller
     }
 
     public function update(Request $request, $id_pembayaran){
+        $request->validate([
+            'tgl_pembayaran' => 'required|date',
+            'termin_pembayaran' => 'required|in:Select the preferred payment terms,Satu,Dua',
+            'nominal_pembayaran' => 'required|numeric',
+            'aspek_pembayaran' => 'required|in:Choose the payment aspect you will pay,Kosan Tipe Kamar Suite, Kosan Tipe Kamar Medium, Kosan Tipe Kamar Reguler, Laundry, Kebersihan',
+            'metode_pembayaran' => 'required|string',
+            'status_pembayaran' => 'required|in:Select the status, Belum Lunas, Lunas, Dibatalkan',
+        ], [
+            'required' => 'Column :attribute must be filled in.',
+            'date' => 'Column :attribute must be in date format.',
+            'in' => 'Column :attribute must select one of the available options.',
+            'numeric' => 'Column :attribute must be a numeric.',
+            'string' => 'Column :attribute must be a text.'
+        ]);
+
         $tanggalFormatBaru = Carbon::createFromFormat('Y-m-d', $request->tgl_pembayaran)->format('Y-m-d');
         $pembayaran = Pembayaran::where('id_pembayaran', $id_pembayaran)->update([
             'tgl_pembayaran' => $tanggalFormatBaru,
@@ -60,8 +79,8 @@ class PembayaranController extends Controller
             'metode_pembayaran' => $request->metode_pembayaran,
             'status_pembayaran' => $request->status_pembayaran,
         ]);
-        return redirect('/pembayaran')->with('success','Pembayaran berhasil diubah');
-    }
+        return redirect('/pembayaran')->with('success','Pembayaran berhasil diubah');
+}
 
     public function destroy($id_pembayaran){
         $pembayaran = Pembayaran::where('id_pembayaran',$id_pembayaran)->delete();
