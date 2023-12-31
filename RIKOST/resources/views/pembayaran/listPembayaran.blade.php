@@ -18,12 +18,26 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-9">
+            @if(session('success'))
+              <div class="alert alert-success">
+                  {{ session('success') }}
+              </div>
+          @endif
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
             <h2>Pembayaran RIKOST</h2>
             <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahModal">Add New</button>
 
         </div>
         <div class="col-md-2">
-            <img src="img/payment.png" width="170px" alt="payment">
+            <img src="img/2.png" width="175px" alt="payment">
         </div>
     </div>
   <table class="table">
