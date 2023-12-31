@@ -50,7 +50,7 @@
                 </select>
               </div>
               <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-              <a href="" class="btn btn-secondary">Batal</a>
+              <a href="/pegawai" class="btn btn-secondary">Batal</a>
               
             </form>
         </div>
