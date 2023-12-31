@@ -17,12 +17,14 @@ class laundry extends Model
         'jenis_laundry', 'id_penyewa', 'berat_laundry', 'tagihan_laundry', 'tgl_pemesanan', 'tgl_selesai', 'status_laundry', 'id_pegawai'
     ];
 
-    public function pegawai(){
-        return $this->belongsToOne(pegawai::class);
+    public function pegawai()
+    {
+        return $this->belongsTo(pegawai::class, 'id_pegawai', 'id_pegawai');
     }
 
-    public function penyewa(){
-        return $this->belongsToOne(penyewa::class);
+    public function penyewa()
+    {
+        return $this->belongsTo(penyewa::class, 'id_penyewa', 'id_penyewa');
     }
 
     public static function getLaundryResults($jenis_laundry, $status_laundry)

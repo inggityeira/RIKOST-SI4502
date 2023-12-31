@@ -1,5 +1,13 @@
-body {
+html, body {
+    height: 100%;
+    margin: 0;
     font-family: "Poppins", sans-serif;
+}
+
+#main-content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #home h1 {
@@ -12,6 +20,17 @@ body {
     letter-spacing: -2.56px;
     margin-left: 90px;
     margin-top: 50px;
+}
+
+h4{
+    color: #000;
+    text-align: center;
+    font-family: Volkhov;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 #home p{
