@@ -13,12 +13,13 @@
         <h2><strong>Laundry Information Center</strong></h2>
     </div>
     
-    <div style="margin-top:20px;">
-        <p class="div ps-md-5">
-            <a href="/laundry" style="color:black;">Laundry</a>
-            >
-            <a href="/servicelaundry" style="color:black;">Service Laundry</a>
-        </p>
+    <div style="margin-top:20px; margin-left:50px;">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb" style="color: #000; font-size: 22px; font-family: Poppins;">
+                <li class="breadcrumb-item"><a href="/laundry" style="color:black; text-decoration: underline;">Laundry</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Service Laundry</li>
+            </ol>
+        </nav>
     </div>
 
     <div class="d-flex align-items-center py-5 position-absolute start-50 translate-middle-x" style="width:1200px;">
