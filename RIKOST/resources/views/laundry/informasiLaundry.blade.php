@@ -15,11 +15,13 @@
             <div class="div ps-md-5">
                 <h2><strong>Laundry Information Center</strong></h2>
             </div>
-            
-            <div style="margin-top:20px;">
-                <p class="div ps-md-5">
-                    <a href="/laundry" style="color:black;">Laundry</a>
-                </p>
+
+            <div style="margin-top:20px; margin-left:50px;">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb" style="color: #000; font-size: 22px; font-family: Poppins;">
+                        <li class="breadcrumb-item active" aria-current="page">Laundry</li>
+                    </ol>
+                </nav>
             </div>
 
             <div class="card" style="margin-left:30px; width: 60rem; border: none;">
@@ -77,13 +79,13 @@
                             @foreach ($laundry as $order)
                                 @if ($count < 5)
                                     <tr>
-                                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:#A38859;"><strong>{{ $order->id_penyewa}}</strong></a></td>
+                                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:#A38859;"><strong>{{ $order->penyewa->nama_penyewa}}</strong></a></td>
                                         <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->jenis_laundry}}</a></td>
                                         <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->berat_laundry}}</a></td>
                                         <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->tagihan_laundry}}</a></td>
                                         <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->tgl_pemesanan}}</a></td>
                                         <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->tgl_selesai}}</a></td>
-                                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->id_pegawai}}</a></td>
+                                        <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:black;">{{ $order->pegawai->nama_pegawai}}</a></td>
                                         <td><a href="{{ route('laundry.detail', $order->id_laundry) }}" style="color:#A38859;">{{ $order->status_laundry}}</a></td>
                                     </tr>
                                     @php
@@ -97,7 +99,7 @@
                 @else
                 <h2 style="color:black; font-size:25px; margin-left:40px; margin-top:40px;">!Laundry data in the database is empty!</h2>
                 @endif
-                <a href="{{route('laundry.list')}}" class="btn" style="background-color:#A38859; margin-left:860px; color:white; font-weight: 600;">See table</a>
+                <a href="{{route('laundry.list')}}" class="btn" style="background-color:#A38859; margin-left:860px; margin-bottom:30px; color:white; font-weight: 600;">See table</a>
 
             </div>
         </div>

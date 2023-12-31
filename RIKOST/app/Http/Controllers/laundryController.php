@@ -15,7 +15,19 @@ class laundryController extends Controller
         return view('laundry.newlaundry', compact('pegawai', 'penyewa'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nameLaundry'=>'required|not_in:0',
+            'serviceLaundry'=>'required|not_in:0',
+            'weightLaundry'=>'required',
+            'laundrybill'=>'required',
+            'odLaundry'=>'required',
+            'pdLaundry'=>'required',
+            'staffLaundry'=>'required|not_in:0',
+            'statusLaundry'=>'required|not_in:0'
+        ]);
+
         $laundry = new laundry();
         $laundry->jenis_laundry = $request->serviceLaundry;
         $laundry->id_penyewa = $request->nameLaundry;
@@ -26,19 +38,23 @@ class laundryController extends Controller
         $laundry->status_laundry = $request->statusLaundry;
         $laundry->id_pegawai = $request->staffLaundry;
 
-        $laundry->save();
-        return redirect()->route('laundry.list')->with('success', 'Data saved successfully!');
+        $new = $laundry->save();
+        if ($new){
+            return back()->with('success', 'Data saved successfully!');
+        }else{
+            return back()->with('fail', 'Something wrong.');
+        }
 
     }
 
     public function index(){
-        $laundry = laundry::all();
+        $laundry = laundry::with('penyewa', 'pegawai')->get();
 
         return view('laundry.listLaundry', compact('laundry'));
     }
 
     public function informasi(){
-        $laundry = laundry::all();
+        $laundry = laundry::with('penyewa', 'pegawai')->get();
         $total = $laundry->count();
         $totalReceived = $laundry->where('status_laundry', 'Received')->count();
         $totalOngoing = $laundry->where('status_laundry', 'On-going')->count();
@@ -88,15 +104,26 @@ class laundryController extends Controller
     {
         $pegawai = pegawai::all();
         $penyewa = penyewa::all();
-        $order = laundry::findOrFail($id_laundry);
-        return view('laundry.detailLaundry', compact('order', 'pegawai', 'penyewa'));
+        $order = Laundry::with('penyewa', 'pegawai')->findOrFail($id_laundry);
+        return view('laundry.detailLaundry', compact('order', 'penyewa', 'pegawai'));
     
     }
 
     public function update(Request $request, $id_laundry)
     {
+        $request->validate([
+            'nameLaundry'=>'required',
+            'serviceLaundry'=>'required',
+            'weightLaundry'=>'required',
+            'laundrybill'=>'required',
+            'odLaundry'=>'required',
+            'pdLaundry'=>'required',
+            'staffLaundry'=>'required',
+            'statusLaundry'=>'required'
+        ]);
+
         $order = laundry::findOrFail($id_laundry);
-        $order->update([
+        $up = $order->update([
             'jenis_laundry' => $request->serviceLaundry,
             'id_penyewa' => $request->nameLaundry,
             'berat_laundry' => $request->weightLaundry,
@@ -106,8 +133,13 @@ class laundryController extends Controller
             'status_laundry' => $request->statusLaundry,
             'id_pegawai' => $request->staffLaundry,
         ]);
+        if ($up){
+            return back()->with('success', 'Order updated successfully');
+        }else{
+            return back()->with('fail', 'Something wrong.');
+        }
 
-        return redirect()->route('laundry.list')->with('success', 'Order updated successfully');
+        
     }
 
     public function delete(Request $request, $id_laundry)
