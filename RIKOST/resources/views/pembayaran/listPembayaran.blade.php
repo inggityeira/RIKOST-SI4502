@@ -15,16 +15,17 @@
 
 @section('content')
 <!-- masukin isi content disini -->
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Pembayaran RIKOST</title>
-</head>
-<body>
-
 <div class="container mt-5">
-  <h2>Pembayaran RIKOST</h2>
-  <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahModal">Add New</button>
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Pembayaran RIKOST</h2>
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahModal">Add New</button>
+
+        </div>
+        <div class="col-md-2">
+            <img src="img/payment.png" width="170px" alt="payment">
+        </div>
+    </div>
   <table class="table">
     <thead>
       <tr>
